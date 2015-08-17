@@ -1,5 +1,12 @@
-French,English,Deutsch
-gravité,gravity,Schwerkraft {die}
-écoulement,flow,Strömung {die}
-écoulement permanent/stationnaire,steady flow,stationäre Strömung {die}
-
+French,English
+frottement,friction
+gravité,gravity
+largeur au miroir,top width
+périmètre mouillé,wetted perimeter
+rayon hydraulique,hydraulics radius
+réseau d'assainissement,sewer system
+section en travers,cross section
+écoulement,flow
+écoulement non-permanent/instationnaire,unsteady flow
+écoulement permanent/stationnaire,steady flow
+écoulement uniforme,uniform flow
