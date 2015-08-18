@@ -1,13 +1,16 @@
 French,English
+débit,dischage
 frottement,friction
 gravité,gravity
 largeur au miroir,top width
+pression hydrostatique,hydrostatic pressure
 périmètre mouillé,wetted perimeter
 rayon hydraulique,hydraulics radius
 réseau d'assainissement,sewer system
 section en travers,cross section
-écoulement,flow
+vitesse,velocity
 écoulement non-permanent/instationnaire,unsteady flow
 écoulement permanent/stationnaire,steady flow
 écoulement uniforme,uniform flow
-a,b
+écoulement,flow
+étanche,tight
