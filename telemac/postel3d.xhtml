@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>postel3d</title>
+    <style>
+      h1 {
+        color: red;
+      }
+
+      h2 {
+        color: green;
+      }
+
+      dt {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      
+      <li><a href="artemis.xhtml">artemis</a></li>
+      
+      <li><a href="postel3d.xhtml">postel3d</a></li>
+      
+      <li><a href="sisyphe.xhtml">sisyphe</a></li>
+      
+      <li><a href="stbtel.xhtml">stbtel</a></li>
+      
+      <li><a href="telemac2d.xhtml">telemac2d</a></li>
+      
+      <li><a href="telemac3d.xhtml">telemac3d</a></li>
+      
+      <li><a href="tomawac.xhtml">tomawac</a></li>
+      
+    </ul>
+    <hr />
+    <h1>postel3d</h1>
+
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 3</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 4</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 5</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 6</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 7</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 8</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DE LA COUPE VERTICALE 9</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>BINAIRE DES FICHIERS DES COUPES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type du binaire utilise pour l'ecriture des fichiers des<br />coupes.<br />Ce type depend de la machine sur laquelle le fichier a ete genere.<br />Les valeurs possibles sont les memes que pour le fichier des<br />resultats 3D.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>STD';<br />'I3E</dd>
+    
+    </dl>
+    
+    <h2>BINAIRE DU FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type du binaire utilise pour l'ecriture des fichiers des<br />coupes.<br />Ce type depend de la machine sur laquelle le fichier a ete genere.<br />Les valeurs possibles sont les memes que pour le fichier des<br />resultats 3D.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>STD';<br />'I3E</dd>
+    
+    </dl>
+    
+    <h2>BINAIRE DU FICHIER DES RESULTATS 3D</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type du binaire utilise pour l'ecriture du fichier des<br />resultats 3d.<br />Ce type depend de la machine sur laquelle le fichier a ete genere.<br />Les valeurs possibles sont :<br />- IBM; pour un fichier crEE sur IBM;<br />- I3E; pour un fichier crEE sur HP;<br />- STD; il s'agit alors d'ordres READ et WRITE normaux.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>STD';<br />'IBM';<br />'I3E</dd>
+    
+    </dl>
+    
+    <h2>DESCRIPTION DES LIBRAIRIES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Description des librairies de POSTEL-3D</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|lib|postel3dMMMVVV.LLL';<br />'builds|PPP|lib|biefMMMVVV.LLL';<br />'builds|PPP|lib|damoMMMVVV.LLL';<br />'builds|PPP|lib|parallelMMMVVV.LLL';<br />'builds|PPP|lib|specialMMMVVV.LLL</dd>
+    
+    </dl>
+    
+    <h2>DICTIONNAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Dictionnaire des mots cles.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>postel3d.dico</dd>
+    
+    </dl>
+    
+    <h2>DISTORSION ENTRE VERTICALE ET HORIZONTALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Rapport entre echelles verticale et horizontale pour chaque<br />coupe verticale.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.;1.;1.;1.;1.;1.;1.;1.;1.</dd>
+    
+    </dl>
+    
+    <h2>EXECUTABLE PAR DEFAUT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Executable par defaut de POSTEL-3D</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|bin|postel3dMMMVVV.exe</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de geometrie</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES COUPES HORIZONTALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom generique des fichiers des coupes horizontales.<br />Le fichier contenant la coupe i aura pour nom ce nom generique suivi<br />de l'extension '.i'.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES COUPES VERTICALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom generique des fichiers des coupes verticales.<br />Le fichier contenant la coupe i au j ieme pas de temps enregistre aura<br />pour nom ce nom generique suivi de l'extension '.i.j'.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les references des fichiers et<br />les options du calcul a realiser.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES RESULTATS 3D</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier des resultats 3D obtenu par un calcul avec<br />TELEMAC 3D.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER FORTRAN</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier FORTRAN a soumettre.<br />Il ne sert a priori qu'a dimensionner les tableaux utilises par<br />POSTEL3D, mais peut contenir des sous-programmes modifies ou propres<br />a l'utilisateur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>DEFAUT</dd>
+    
+    </dl>
+    
+    <h2>HAUTEUR PAR RAPPORT AU PLAN DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Decalage entre la coupe et son plan de reference, ceci pour<br />chaque coupe horizontale.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.;0.;0.;0.;0.;0.;0.;0.;0.</dd>
+    
+    </dl>
+    
+    <h2>LISTE DES FICHIERS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms des fichiers exploites par le code</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>FICHIER DES PARAMETRES';<br />'DICTIONNAIRE';<br />'FICHIER FORTRAN';<br />'FICHIER DE GEOMETRIE';<br />'FICHIER DES PARAMETRES';<br />'FICHIER DES RESULTATS 3D';<br />'FICHIER DES COUPES HORIZONTALES';<br />'FICHIER DES COUPES VERTICALES</dd>
+    
+    </dl>
+    
+    <h2>MOT DE PASSE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Mot de passe associe. Option non activee sur une station de<br />travail.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE COUPES HORIZONTALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de definir simultanement plusieurs coupes horizontales.<br />La valeur maximale autorisee est 9.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE COUPES VERTICALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de definir simultanement plusieurs coupes verticales.<br />La valeur maximale autorisee est 9.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE POINTS DE DISCRETISATION POUR LES COUPES VERTICALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Il s'agit du nombre de points suivant l'horizontal.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>120</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE VERSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>V7P0</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE VERSION DE TELEMAC-3D</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Ce mot cle est utile a cause du changement du format TEL3D<br />apres la version V1P0. Auparavant SORG3D n'existait pas et les<br />variables pour les sorties 3D etaient figees a U,V,W,TA,TP.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>V7P0</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DU PREMIER ENREGISTREMENT POUR LES COUPES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Seuls les enregistrements au-dela de ce numero seront traites<br />pour les coupes.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 3</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 4</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 5</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 6</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 7</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 8</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DE LA COUPE VERTICALE 9</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE SORTIE DES COUPES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Periode en nombre d'enregistrements entre 2 coupes.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PLACE MEMOIRE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Place memoire sur CRAY, en mots de 8 octets, reservee en<br />machine pour la realisation du calcul. Une estimation de cette valeur<br />est donnee en tete du listing.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1500000W</dd>
+    
+    </dl>
+    
+    <h2>PLAN DE REFERENCE POUR CHAQUE COUPE HORIZONTALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Chaque coupe horizontale sera parallele a son plan de reference.<br />Ainsi il est possible de faire des coupes par exemple :<br />- a telle distance au-dessus du fond,<br />- a telle distance sous la surface,<br />- suivant un plan intermediaire,...<br />Le plan 0 correspond au plan parfaitement horizontal a la cote 0.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;1;2;3;4;5;6;7;8</dd>
+    
+    </dl>
+    
+    <h2>STATION DESTINATRICE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>TEMPS MACHINE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Temps CPU (en secondes) alloue pour la realisation de cette<br />operation. Attention, il s'agit bien d'une chaine de caracteres.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+    <h2>USER CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Userid de l'utilisateur. Option non activee sur une station de<br />travail.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>USER STATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+
+  </body>
+</html>

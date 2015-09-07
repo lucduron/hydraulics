@@ -1,0 +1,1496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>artemis</title>
+    <style>
+      h1 {
+        color: red;
+      }
+
+      h2 {
+        color: green;
+      }
+
+      dt {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      
+      <li><a href="artemis.xhtml">artemis</a></li>
+      
+      <li><a href="postel3d.xhtml">postel3d</a></li>
+      
+      <li><a href="sisyphe.xhtml">sisyphe</a></li>
+      
+      <li><a href="stbtel.xhtml">stbtel</a></li>
+      
+      <li><a href="telemac2d.xhtml">telemac2d</a></li>
+      
+      <li><a href="telemac3d.xhtml">telemac3d</a></li>
+      
+      <li><a href="tomawac.xhtml">tomawac</a></li>
+      
+    </ul>
+    <hr />
+    <h1>artemis</h1>
+
+    
+    <h2>ACCELERATION DE LA PESANTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de l'acceleration de la pesanteur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>9.81</dd>
+    
+    </dl>
+    
+    <h2>ALPHA</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le coefficient Alpha dans la Formulation de la dissipation<br />par deferlement en houle aleatoire d'apres Battjes &amp; Janssen</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.0</dd>
+    
+    </dl>
+    
+    <h2>ANGLE MAXIMUM DE PROPAGATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />HOULE ALEATOIRE MULTIDIRECTIONNELLE = OUI<br />indique la borne superieure de l'intervalle des directions de<br />propagation dans le cas d'une houle aleatoire multidirectionnelle<br />L'angle est donne en degres et est compte positivement dans le sens<br />direct a partir de l'axe x.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>180.</dd>
+    
+    </dl>
+    
+    <h2>ANGLE MINIMUM DE PROPAGATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />HOULE ALEATOIRE MULTIDIRECTIONNELLE = OUI<br />indique la borne inferieure de l'intervalle des directions de<br />propagation dans le cas d'une houle aleatoire multidirectionnelle<br />L'angle est donne en degres et est compte positivement dans le sens<br />direct a partir de l'axe x.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>-180.</dd>
+    
+    </dl>
+    
+    <h2>BALAYAGE EN PERIODE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>oui, si l'on veut effectuer plusieurs calculs en balayant un<br />intervalle de periodes (voir reels index 8,9 et 10).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Ensemble des bibliotheques utilises pour un calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>artemis,telemac,util,damo,bief,hp</dd>
+    
+    </dl>
+    
+    <h2>BINAIRE DU FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type du binaire utilise pour l'ecriture du fichier de geometrie.<br />Ce type depend de la machine sur laquelle le fichier a ete genere.<br />Les valeurs possibles sont :<br />- IBM, pour un fichier cree sur IBM,<br />- I3E, pour un fichier cree sur HP,<br />- STD, permet de prendre par defaut le type de binaire associe<br />a la machine sur laquelle l'utilisateur travaille.<br />Il s'agit alors d'ordres READ et WRITE normaux.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>"IBM"';'"I3E"';'"STD"</dd>
+    
+    </dl>
+    
+    <h2>BINAIRE DU FICHIER DES RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type du binaire utilise pour l'ecriture du fichier des resultats.<br />Ce type depend de la machine sur laquelle le fichier a ete genere.<br />Les valeurs possibles sont les memes que pour le fichier de geometrie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>"IBM"';'"I3E"';'"STD"</dd>
+    
+    </dl>
+    
+    <h2>CALCUL AUTOMATIQUE DE LA PHASE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'TRUE : CALCUL AUTOMATIQUE DE LA PHASE<br />(basee sur une profondeur de reference)'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CALCUL AUTOMATIQUE DE TETAP</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'TRUE : CALCUL AUTO DES ANGLES TETAP<br />(basee sur la direction de la vitesse)'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CHAINAGE TOMAWAC 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Oui, si on imposer un spectre tomawac unique sur la frontiere<br />onde incidente.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CHAINE BIDON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>TABLEAU DE CARACTERES DE TAILLE :4<br />Place reservee pour eventuellement introduire<br />de nouvelles<br />chaines de caracteres (nouveaux fichiers...).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>A ne pas confondre avec le FACTEUR DE FROTTEMENT.<br />Non utilise dans ARTEMIS. On le laisse par coherence avec TELEMAC2D</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE RELAXATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Non utilise dans la version 3.0 .<br />Ce coefficient doit etre compris entre 0 et 2.<br />coefficient de relaxation  dans le cas d'une resolution par la<br />methode  de panchang et al.<br />voir Solution of the Mild Slope Wave Problem by Iteration<br />Applied Ocean Research, 1991, Vol. 13, No. 4.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.4</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE RIDES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Specifie le coefficient de rides utilise dans la formule de<br />Van Rijn pour calculer le facteur de frottement.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.7</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1.0 = " 1.0     : Pour des rides seules"';<br />'0.7 = " 0.7     : Pour des rides superposees a des vagues de sable"'</dd>
+    
+    </dl>
+    
+    <h2>CONDITIONS INITIALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de definir les conditions initiales sur les hauteurs d'eau.<br />Les valeurs possibles sont :<br />- COTE NULLE. Initialise la cote de surface libre a 0.<br />Les hauteurs d'eau initiales sont alors retrouvees en<br />faisant la difference entre les cotes de surface libre<br />et du fond.<br />- COTE CONSTANTE .Initialise la cote de surface libre a la<br />valeur donnee par le mot-cle COTE INITIALE. Les hauteurs<br />d'eau initiales sont calculees comme precedemment.<br />- HAUTEUR NULLE .Initialise les hauteurs d'eau a 0.<br />- HAUTEUR CONSTANTE. Initialise les hauteurs d'eau a la valeur<br />donnee par le mot-cle HAUTEUR INITIALE.<br />- PARTICULIERES. Les conditions initiales sur la hauteur d'eau<br />doivent etre precisees dans le sous-programme CONDIH.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>COTE NULLE</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'"COTE NULLE"';<br />'"COTE CONSTANTE"';<br />'"HAUTEUR NULLE"';<br />'"HAUTEUR CONSTANTE"';<br />'"PARTICULIERES"'</dd>
+    
+    </dl>
+    
+    <h2>COORDONNEES DE L'ORIGINE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur en metres, utilise pour eviter les trops grands<br />nombres, transmis<br />dans le format Selafin mais pas d'autre traitement pour l'instant</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0</dd>
+    
+    </dl>
+    
+    <h2>COORDONNEES DE REFERENCE POUR LA PHASE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coordonnees pour l origine des phases. Ne change rien<br />aux hauteurs de vagues calculees</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0</dd>
+    
+    </dl>
+    
+    <h2>COTE INITIALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option CONDITIONS INITIALES : COTE CONSTANTE.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>COURANT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'TRUE : PRISE EN COMPTE DE LA REFRACTION DE LA HOULE PAR<br />LE COURANT.<br />Modele retenu : Kostense et Al. (1988) '</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DATE DE L'ORIGINE DES TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de fixer la date d'origine des temps du modele lors<br />de la prise en compte de la force generatrice de la maree.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0</dd>
+    
+    </dl>
+    
+    <h2>DEFERLEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>oui, si l'on souhaite integrer le processus de deferlement<br />bathymetrique (voir reels index 18, 19, 20, 21, 22, 23<br />et entiers index 12, 13).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DESCRIPTION DES LIBRAIRIES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Description des librairies de ARTEMIS</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|lib|artemisMMMVVV.LLL';<br />'builds|PPP|lib|biefMMMVVV.LLL';<br />'builds|PPP|lib|damoMMMVVV.LLL';<br />'builds|PPP|lib|parallelMMMVVV.LLL';<br />'builds|PPP|lib|specialMMMVVV.LLL</dd>
+    
+    </dl>
+    
+    <h2>DIAMETRE50</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>DIAM50 represente le diametre maximum de 50% en poids des<br />sediments. En general, on a DIAM90 = 1.5 * DIAM50<br />DIAM50 est plus souvent donne dans des tables</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.10E-3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0.660E-3 = " 0.66E-3     : Pour des sables tres grossiers"';<br />'0.33E-3 = " 0.33E-3     : Pour des sables grossiers"';<br />'0.17E-3 = " 0.17E-3   : Pour des sables moyens"';<br />'0.083E-3 = " 0.083E-3 : Pour des sables fins"';<br />'0.040E-3 = " 0.040E-3 : Pour des sables tres fins"';<br />'0.10E-3 = " 0.10E-3   : Valeur par defaut"'</dd>
+    
+    </dl>
+    
+    <h2>DIAMETRE90</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>DIAM90 represente le diametre maximum, en m, de 90% en poids des<br />sediments.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.15E-3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1.0E-3 = " 1.0E-3     : Pour des sables tres grossiers"';<br />'0.5E-3 = " 0.5E-3     : Pour des sables grossiers"';<br />'0.25E-3 = " 0.25E-3   : Pour des sables moyens"';<br />'0.125E-3 = " 0.125E-3 : Pour des sables fins"';<br />'0.062E-3 = " 0.062E-3 : Pour des sables tres fins"';<br />'0.15E-3 = " 0.15E-3   : Valeur par defaut"'</dd>
+    
+    </dl>
+    
+    <h2>DICTIONNAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Dictionnaire des mots cles.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>artemis.dico</dd>
+    
+    </dl>
+    
+    <h2>DIRECTION DE PROPAGATION DE LA HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne la direction du vecteur d'onde de la houle incidente. L'angle<br />est donne en degres et est compte positivement dans le sens direct<br />a partir de l'axe des x.<br />Il s'agit de la direction principale  de propagation.<br />Cette direction est la meme a toutes les frontieres maritimes.<br />Si l'utilisateur veut specifier des directions differentes sur<br />differentes frontieres, il doit le faire dans son FORTRAN dans le<br />sous-programme BORH en specifiant la variable TETAB.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.0</dd>
+    
+    </dl>
+    
+    <h2>DISCRETISATION EN ESPACE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>NON ACTIVE POUR LE MOMENT</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>EXECUTABLE PAR DEFAUT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Executable par defaut de ARTEMIS</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|bin|artemisMMMVVV.exe</dd>
+    
+    </dl>
+    
+    <h2>EXPOSANT S</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />HOULE ALEATOIRE MULTIDIRECTIONNELLE = OUI<br />indique la valeur maximale de l'exposant s dans l'expression donnant<br />la repartition directionnelle de la houle.<br />Cette expression est celle donnee par Goda dans Random Seas and<br />Design of Maritime Structures - University of Tokyo Press :<br />G(f,teta) = G0 * (cos(teta/2))**2s. f est la frequence et teta est<br />la direction de propagation de la houle.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>20.</dd>
+    
+    </dl>
+    
+    <h2>FACTEUR DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise si le mot-cle FACTEUR DE FROTTEMENT IMPOSE = OUI.<br />Fixe le facteur de frottement choisi uniforme sur le domaine</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>FACTEUR DE FROTTEMENT IMPOSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise avec l'option FROTTEMENT = OUI.<br />Oui, permet de choisir d'imposer un facteur de frottement, par un<br />mot-cle s'il est uniforme (voir le reel d'index 29) ou en<br />programmant dans le sous-programme FWSPEC.<br />Si Non, ARTEMIS considere par defaut que les fonds sont sableux,<br />et calcule automatiquement le facteur de frottement avec les<br />caracteristiques du sediment et de l'ecoulement.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES BINAIRE 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees, code en binaire, mis a la disposition de<br />l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 24.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>binaire1</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES BINAIRE 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees, code en binaire, mis a la disposition de<br />l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 25.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>binaire2</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES FORMATE 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees formate mis a la disposition de l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 26.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>formate1</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES FORMATE 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees formate mis a la disposition de l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 27.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>formate2</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES TOMAWAC 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier binaire contenant un spectre issu de TOMAWAC.<br />Les donnees de ce fichier seront a lire sur le canal 30.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>binaire1</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant le maillage du calcul a realiser.</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>geo</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats de reference pour la validation.<br />Les resultats a placer dans ce fichier seront a ecrire sur le canal 22.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES CONDITIONS AUX LIMITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les types de conditions aux limites.<br />Ce fichier est construit de facon automatique par le mailleur et STBTEL<br />au moyen de couleurs affectees aux noeuds des frontieres du domaine<br />de calcul.</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>conlim</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES FONDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier eventuel contenant la bathymetrie associee au<br />maillage.<br />Si ce mot-cle est utilise, c'est cette bathymetrie qui sera<br />utilisee pour le calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>fond</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les parametres du calcul a realiser.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>cas</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier dans lequel seront ecrits les resultats du calcul,<br />avec la periodicite donnee par le mot cle PERIODE POUR LES SORTIES<br />GRAPHIQUES.<br />Sur IBM, ce fichier est alloue automatiquement s'il n'existe pas,<br />avec les caracteristiques suivantes :<br />Format d'enregistrement   : VBS<br />Longueur d'enregistrement : X<br />Taille de bloc            : 6204<br />Nombre de pistes          : 50 en primaire, 10 en secondaire<br />La place memoire ainsi reservee est suffisante pour la plupart des<br />calculs de dimension moyenne.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>resu</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES RESULTATS BINAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier des resultats, code en binaire, mis a la disposition de<br />l'utilisateur.<br />Les resultats a placer dans ce fichier seront a ecrire sur<br />le canal 28.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>resubin</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES RESULTATS FORMATE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier des resultats formate mis a la disposition de l'utilisateur.<br />Les resultats a placer dans ce fichier seront a ecrire sur<br />le canal 29.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>resufor</dd>
+    
+    </dl>
+    
+    <h2>FICHIER FORTRAN</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier FORTRAN a soumettre.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>DEFAUT</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE DONNEES BINAIRE 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE DONNEES BINAIRE 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE DONNEES TOMAWAC 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de geometrie.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMULATION DU DEFERLEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Specifie la formulation choisie pour le coefficient de dissipation<br />par deferlement. N'est effectif qu'en Houle reguliere.<br />1 : Formulation de Battjes &amp; Jansen, 1978<br />2 : Formulation de Dally et al., 1984<br />En Houle aleatoire, la seule formulation utilisee est celle de<br />Battjes &amp; Janssen, 1978</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1 = "BATTJES &amp; JANSSEN"';<br />'2 = "DALLY"'</dd>
+    
+    </dl>
+    
+    <h2>FORMULATION DU FROTTEMENT DE FOND</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise avec l'option FROTTEMENT = OUI.<br />Fixe le choix de la formulation du frottement :<br />1 : Kostense et al., 1986<br />2 : Putnam &amp; Johnson, 1949.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>' 1 = " 1: Formulation de Kostense integrant le calcul de Ue (1986)"';<br />' 2 = " 2: Formulation de Putnam &amp; Johnson (1949)"'</dd>
+    
+    </dl>
+    
+    <h2>FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Oui, si on veut prendre en compte le frottement sur le fond dans<br />la simulation.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>GAMMA</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />HOULE ALEATOIRE MONODIRECTIONNELLE = OUI<br />ou avec l'option<br />HOULE ALEATOIRE MULTIDIRECTIONNELLE = OUI<br />Indique la valeur de gamma pour le spectre d'energie<br />GAMMA = 1   spectre de Pierson-Moskowitz<br />GAMMA = 3.3 spectre de JONSWAP moyen (valeur par defaut).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3.3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1.0 = " spectre de Pierson-Moskowitz"';<br />'3.3 = " spectre de JONSWAP moyen"';<br />'"0.0" = " spectre au choix"'</dd>
+    
+    </dl>
+    
+    <h2>GAMMAS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le coefficient Gammas dans le critere de la hauteur de<br />deferlement. Ne pas confondre avec le coefficient Gamma qui<br />intervient dans la formule du spectre de Jonswap</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.88</dd>
+    
+    </dl>
+    
+    <h2>GDALLY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le coefficient Gammad dans la Formulation de la dissipation<br />par Dally et al., 1984. Ne pas confondre avec Gamma (Formule de Jonswap)<br />et Gammas (Critere de deferlement)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.4</dd>
+    
+    </dl>
+    
+    <h2>HAUTEUR INITIALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />CONDITIONS INITIALES : HAUTEUR CONSTANTE.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>HEURE DE L'ORIGINE DES TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de fixer l'heure d'origine des temps du modele lors<br />de la prise en compte de la force generatrice de la maree.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0</dd>
+    
+    </dl>
+    
+    <h2>HOULE ALEATOIRE MONODIRECTIONNELLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>oui, si l'on veut effectuer un calcul en houle aleatoire<br />monodirectionnelle (voir reels index 12, 13 et entier index 10).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>HOULE ALEATOIRE MULTIDIRECTIONNELLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>oui, si l'on veut effectuer un calcul en houle aleatoire<br />multidirectionnelle (voir les reels index 12, 13, 14, 15 et 16 et<br />les entiers index 10 et 11.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>INFORMATIONS SUR LE SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le nombre d'iterations necessaires a la convergence du solveur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>INSTANT DE LECTURE DU SPECTRE TOMAWAC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Indique l instant de calcul TOMAWAC associe au spectre<br />qui doit etre importe dans ARTEMIS</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>KDALLY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le coefficient K dans la Formulation de la dissipation<br />par deferlement d'apres Dally et al., 1984</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.1</dd>
+    
+    </dl>
+    
+    <h2>LISSAGE DES HAUTEURS DE HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>OUI si on souhaite lisser les hauteurs de houle<br />pour ameliorer le calcul des contraintes de radiation<br />(actif uniquement en houle reguliere).<br />Valeur par defaut = NON.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>LISSAGES DU FOND</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de lissages effectues sur la topographie.<br />chaque lissage, effectue a l'aide d'une matrice de masse,<br />est conservatif.<br />Utilise lorsque les donnees de bathymetrie donnent des resultats<br />trop irreguliers apres interpolation.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>LISTE DES FICHIERS</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>FICHIER DES PARAMETRES';<br />'DICTIONNAIRE';<br />'FICHIER FORTRAN';<br />'FICHIER DE GEOMETRIE';<br />'FICHIER DES CONDITIONS AUX LIMITES';<br />'FICHIER DES RESULTATS';<br />'FICHIER DES FONDS';<br />'FICHIER DE DONNEES BINAIRE 1';<br />'FICHIER DE DONNEES BINAIRE 2';<br />'FICHIER DE DONNEES FORMATE 1';<br />'FICHIER DE DONNEES FORMATE 2';<br />'FICHIER DE RESULTATS BINAIRE';<br />'FICHIER DE RESULTATS FORMATE';<br />'FICHIER DE REFERENCE';<br />'FICHIER DE DONNEES TOMAWAC 1</dd>
+    
+    </dl>
+    
+    <h2>LOI DE FROTTEMENT SUR LE FOND</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Non utilise dans ARTEMIS. On le laisse par coherence avec TELEMAC2D</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>LONGUEUR DU VECTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>LONGUEUR DU VECTEUR POUR LES MACHINES VECTORIELLES</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>MASSE VOLUMIQUE DU FLUIDE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Masse volumique du fluide (eau) en Kg/m3.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1000.0</dd>
+    
+    </dl>
+    
+    <h2>MASSE VOLUMIQUE DU SEDIMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Masse volumique du sediment en Kg/m3.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2650.0</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR LE SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Les algorithmes utilises pour la resolution du systeme<br />matriciel etant iteratifs, il est necessaire de limiter le nombre<br />d'iterations autorisees</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>60000</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM DE SOUS-ITERATIONS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le nombre maximum admis de sous-iterations pour le calcul<br />du coefficient de dissipation</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>15</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM DE SOUS-ITERATIONS POUR TETAP</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le nombre maximum admis de sous-iterations pour le calcul<br />automatique de tetap</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>15</dd>
+    
+    </dl>
+    
+    <h2>MOT DE PASSE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Mot de passe associe a l'USER CRAY.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE DIRECTION DANS LE SPECTRE TOMAWAC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Indique le nombre de directions dans le spectre importe<br />depuis TOMAWAC</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE DIRECTIONS DE DISCRETISATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />HOULE ALEATOIRE MULTIDIRECTIONNELLE = OUI<br />Pour un calcul en houle aleatoire multidirectionnelle,<br />nombre de bandes d'egale energie servant a discretiser le spectre<br />directionnel d'energie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>5</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE FREQUENCES DANS LE SPECTRE TOMAWAC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Indique le nombre de frequences dans le spectre importe<br />depuis TOMAWAC</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE PERIODES DE DISCRETISATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />HOULE ALEATOIRE MONODIRECTIONNELLE = OUI<br />ou avec l'option<br />HOULE ALEATOIRE MULTIDIRECTIONNELLE = OUI<br />Pour un calcul en houle aleatoire monodirectionnelle ou<br />multidirectionnelle, nombre de bandes d'egale energie servant a<br />discretiser le spectre d'energie en frequence.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>5</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE VARIABLES PRIVEES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de fixer le nombre de variables privees</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE COMPTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Numero du compte calcul sur lequel sera impute le cout<br />du calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE VERSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Numero de version des bibliotheques ARTEMIS TELEMAC2D UTILE DAMO<br />BIEF et HP.<br />Si ce nom commence par D il s'agit de l'option Debug (exemple DV1P0)<br />Si ce nom commence par F il s'agit de l'option Flowtrace.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>V7P0</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Parametre definissant la dimension de l'espace de Krylov<br />pour le solveur 7 (GMRES)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>PAS POUR LE BALAYAGE EN PERIODE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />BALAYAGE EN PERIODE = OUI<br />indique le pas a prendre pour effectuer le balayage en periodes<br />(pour par exemple rechercher les periodes de resonances).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE DEBUT POUR LE BALAYAGE EN PERIODE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />BALAYAGE EN PERIODE = OUI<br />indique la borne gauche de l'intervalle de periodes a parcourir<br />(pour par exemple rechercher les periodes de resonances).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE FIN POUR LE BALAYAGE EN PERIODE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />BALAYAGE EN PERIODE = OUI<br />indique la borne droite de l'intervalle de periodes a parcourir<br />(pour par exemple rechercher les periodes de resonances).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE LA HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit la periode de la houle en mode monochromatique.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10.</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE PIC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />HOULE ALEATOIRE MONODIRECTIONNELLE = OUI<br />ou avec l'option<br />HOULE ALEATOIRE MULTIDIRECTIONNELLE = OUI<br />Fixe la periode de pic (en sec) du spectre d'energie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10.0</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE SORTIE GRAPHIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la periode, en nombre de periodes de houle,<br />d'impression des VARIABLES POUR LES SORTIES GRAPHIQUES (voir ce mot-<br />cle) dans le FICHIER DES RESULTATS</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE SORTIE LISTING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la periode, en nombre de periodes de houle,<br />d'impression des VARIABLES A IMPRIMER (voir ce mot-cle). Pour la mise<br />au point, il faut savoir que la sortie des resultats est effectuee<br />systematiquement sur le fichier de retour d'execution du code<br />(actuellement accessible par le menu 3.e de SPF sur IBM)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE MAXIMUM DU SPECTRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur de la periode maximum voulue en secondes<br />si on veut tronquer le spectre pour le calcul<br />des periodes en houle aleatoire (voir PERALE).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>200.</dd>
+    
+    </dl>
+    
+    <h2>PERIODE MINIMUM DU SPECTRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur de la periode minimum voulue en secondes<br />si on veut tronquer le spectre pour le calcul<br />des periodes en houle aleatoire (voir PERALE).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.02</dd>
+    
+    </dl>
+    
+    <h2>PLACE MEMOIRE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Place memoire (en mots de 8 octets) reservee en machine pour la<br />realisation du calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1500000W</dd>
+    
+    </dl>
+    
+    <h2>PRECISION DU SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Precision demandee pour la resolution de l'equation de Berkhoff.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-4</dd>
+    
+    </dl>
+    
+    <h2>PRECISION SUR LES SOUS-ITERATIONS POUR COURANT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne la precision requise pour les sous-iterations du calcul<br />du nombre d'onde en presencede courant (vecteur d'onde).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-2</dd>
+    
+    </dl>
+    
+    <h2>PRECISION SUR LES SOUS-ITERATIONS POUR LA DISSIPATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne la precision requise pour les sous-iterations du calcul<br />du coefficient de dissipation.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-2</dd>
+    
+    </dl>
+    
+    <h2>PRECISION SUR LES SOUS-ITERATIONS POUR TETAP</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne la precision requise pour les sous-iterations du calcul<br />automatique de cos(TETAP).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-2</dd>
+    
+    </dl>
+    
+    <h2>PRECONDITIONNEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de preconditionner le systeme de l'etape de propagation afin<br />d'accelerer la convergence lors de sa resolution.<br />- 0 : pas de preconditionnement,<br />- 2 : preconditionnement diagonal.<br />- 3 : preconditionnement bloc-diagonal.<br />- 5 : preconditionnement diagonal en valeur absolue.<br />- 7 : preconditionnement de Crout par element.<br />Certains preconditionnements sont cumulables<br />(les diagonaux 2 ou 3 avec les autres)<br />Pour cette raison on ne retient que les nombres premiers pour<br />designer les preconditionnements. Si l'on souhaite en cumuler<br />plusieurs on formera le produit des options correspondantes.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0= "pas de preconditionnement"';<br />'2= "preconditionnement diagonal"';<br />'3= "preconditionnement bloc-diagonal"';<br />'5= "preconditionnement diagonal en valeur absolue"';<br />'7= "preconditionnement de Crout par element"'</dd>
+    
+    </dl>
+    
+    <h2>PRIORITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Classe de facturation demandee pour le calcul : il y a trois<br />possibilites : jour, nuit et weekend.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>JOUR</dd>
+    
+    </dl>
+    
+    <h2>PROCESSEURS PARALLELES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>NOMBRE DE PROCESSEURS EN CALCUL PARALLELE<br />0 : 1 machine, compilation sans bibliotheque de parallelisme<br />1 : 1 machine, compilation avec bibliotheque de parallelisme<br />2 : 2 processeurs ou machines en parallele<br />etc...</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>PRODUIT MATRICE-VECTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : Ancien Produit  2 : Nouveau Produit Frontal</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PROFONDEUR DE REFERENCE POUR LA PHASE AUTOMATIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'PROFONDEUR DE REFERENCE POUR LE CALCUL DE LA PHASE.<br />ESSAYEZ DE METTRE LA FRONTIERE INCIDENTE SUR UNE ZONE<br />DE BATHYMETRIE HOMOGENE. LA PROFONDEUR A RENSEIGNER<br />DOIT ETRE REPRESENTATIVE DE LA PROFONDEUR D EAU SUR<br />LA FRONTIERE'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>-1.0</dd>
+    
+    </dl>
+    
+    <h2>REGIME HYDRAULIQUE IMPOSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise avec l'option FROTTEMENT = OUI.<br />Permet de choisir d'imposer le regime hydraulique dans le cas<br />d'un calcul automatique du facteur de frottement sur fonds sableux.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>RELAXATION SUR LA DISSIPATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le coefficient de relaxation entre deux sous-iterations<br />pour le calcul du coefficient de dissipation.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.5</dd>
+    
+    </dl>
+    
+    <h2>RELAXATION SUR TETAP</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le coefficient de relaxation entre deux sous-iterations<br />pour le calcul de l angle d incidence automatique.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>RUGOSITE DE PEAU SEULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise avec l'option FROTTEMENT = OUI.<br />Permet de choisir de ne prendre en compte<br />que la rugosite de peau dans le cas d'un calcul automatique<br />du facteur de frottement sur fonds sableux.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de choisir le solveur utilise pour la resolution de l'etape de<br />propagation. Toutes les methodes proposees actuellement s'apparentent<br />au Gradient Conjugue. Ce sont :<br />1 : gradient conjugue<br />2 : residu conjugue<br />3 : gradient conjugue sur equation normale<br />4 : erreur minimale<br />5 : gradient conjugue carre (non programme)<br />6 : gradient conjugue de type CGSTAB<br />7 : GMRES<br />8 : solveur direct</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>8</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1 = "gradient conjugue"';<br />'2 = "residu conjugue"';<br />'3 = "gradient conjugue sur equation normale"';<br />'4 = "erreur minimale"';<br />'5 = "gradient conjugue carre (non programme)"';<br />'6 = "CGSTAB"';<br />'7 = "GMRES"';<br />'8 = "direct"'</dd>
+    
+    </dl>
+    
+    <h2>SORTIE LISTING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Sortie des resultats sur support papier.<br />Si l'on met NON le listing ne contient que l'en-tete et la mention<br />FIN NORMALE DU PROGRAMME<br />Commande a eviter.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DU FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Adapte la lecture du FICHIER DE GEOMETRIE au standard choisi pour<br />celui-ci. Ce peut etre :<br />- 1 : un maillage regulier au standard LEONARD,<br />- 2 : un maillage quelconque au standard RUBENS,<br />- 3 : un maillage quelconque au standard SELAFIN.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1 =LEONARD';<br />'2 =RUBENS';<br />'3 =SELAFIN'</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DU FICHIER DES RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Standard du fichier des resultats :<br />- 1 : un maillage regulier au standard LEONARD,<br />- 2 : un maillage quelconque au standard RUBENS,<br />- 3 : un maillage quelconque au standard SELAFIN.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1 =LEONARD';<br />'2 =RUBENS';<br />'3 =SELAFIN'</dd>
+    
+    </dl>
+    
+    <h2>STOCKAGE DES MATRICES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : EBE classique  2 : EBE assemble  3 : par segment<br />attention, avec 2, il faut une numerotation speciale des points</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>TEMPS MACHINE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Temps CPU (en secondes) alloue pour la realisation du calcul.<br />Attention, il s'agit bien d'une chaine de caracteres.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+    <h2>TITRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Titre du cas etudie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>PAS DE TITRE DANS LE FICHIER CAS</dd>
+    
+    </dl>
+    
+    <h2>TYPE DU REGIME HYDRAULIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise si le mot-cle REGIME HYDRAULIQUE IMPOSE = OUI.<br />Determine le regime hydraulique</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>' 1 = " 1: Pour le regime laminaire"';<br />' 2 = " 2: Pour le regime turbulent lisse"';<br />' 3 = " 3: Pour le regime turbulent rugueux"';<br />' 4 = " 4: Pour le regime transitoire"'</dd>
+    
+    </dl>
+    
+    <h2>USER CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Userid CRAY de l'utilisateur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>VALEUR MINIMUM DE H</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur minimale de H<br />Non active pour l'instant.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-7</dd>
+    
+    </dl>
+    
+    <h2>VALIDATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Option utilisee principalement pour le dossier de validation. Le<br />fichier des resultats du calcul precedent est alors considere comme une<br />reference a laquelle on va comparer le calcul. La comparaison<br />est effectuee par le sous-programme VALIDA qui peut etre une comparaison<br />avec une solution exacte par exemple.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>VARIABLES A IMPRIMER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom des variables que l'utilisateur desire ecrire a l'ecran.<br />Memes possibilites que pour les sorties graphiques.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'HS="hauteur de la houle"';<br />'PHAS="phase de la houle"';<br />'U0="vitesse u en surface a t=0"';<br />'V0="vitesse v en surface a t=0"';<br />'ZS="cote de la surface libre"';<br />'ZF="fond"';<br />'HW="hauteur d'eau au repos"';<br />'C="vitesse de phase"';<br />'CG="vitesse de groupe"';<br />'K="nombre d'onde"';<br />'PHIR="potentiel reel"';<br />'PHII="potentiel imaginaire"';<br />'D="prive(1,1)"';<br />'E="prive(1,2)"';<br />'F="prive(1,3)"';<br />'G="prive(1,4)"';<br />'T01="première période moyenne spectrale"';<br />'T02="deuxième période moyenne spectrale"';<br />'TM="troisième période moyenne spectrale"';<br />'FX="force en X"';<br />'FY="force en Y"';<br />'INC="incidence de la houle"';<br />'QB="taux de deferlement"';<br />'SXX="contrainte SXX"';<br />'SXY="contrainte SXY"';<br />'SYY="contrainte SYY"'</dd>
+    
+    </dl>
+    
+    <h2>VARIABLES POUR LES SORTIES GRAPHIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms des variables que l'utilisateur veut ecrire dans le fichier des<br />resultats.<br />Le choix des separateurs est libre.<br />Les possibilites offertes sont les suivantes :<br />- HS hauteur de la houle<br />- PHAS phase de la houle<br />- U0 vitesse u en surface      (a t=0)<br />- V0 vitesse v en surface      (a t=0)<br />- ZS cote de la surface libre  (a t=0)<br />- ZF fond<br />- HW hauteur d'eau au repos<br />- C vitesse de phase<br />- CG vitesse de groupe<br />- K nombre d'onde<br />- PHIR potentiel reel<br />- PHII potentiel imaginaire<br />- D prive(1,1) (variable 13)<br />- E prive(1,2) (variable 14)<br />- F prive(1,3) (variable 15)<br />- G prive(1,4) (variable 16)<br />- T01 première période moyenne spectrale<br />- T02 deuxième période moyenne spectrale<br />- TM troisième période moyenne spectrale<br />- FX force en X<br />- FY force en Y<br />- INC incidence de la houle<br />- QB taux de deferlement<br />- SXX contrainte SXX<br />- SXY contrainte SXY<br />- SYY contrainte SYY<br />L'utilisateur dispose de 4 champs libres, qu'il peut<br />utiliser pour ecrire dans le fichier des resultats des variables<br />qu'il cree lui-meme. Ces variables propres a l'utlisateur doivent<br />etre calculees dans le sous-programme CALRES et le nom que l'on<br />desire leur donner doit etre ecrit dans le sous-programme NOMVAR.<br />Ces 4 champs sont :<br />- D, E, F, G qui correspondent aux tableaux PRIVE(1,1), PRIVE(1,2),<br />PRIVE(1,3), PRIVE(1,4). A la difference des variables<br />precedentes, celles-ci sont conservees dans tout le programme, et<br />peuvent donc etre reutilisees.<br />Dans ce dernier cas ne pas oublier de donner une taille<br />suffisante au tableau PRIVE,<br />en precisant le parametre NPRIV (dans le programme principal).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>HS,PHAS,ZS,ZF</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'HS="hauteur de la houle"';<br />'PHAS="phase de la houle"';<br />'U0="vitesse u en surface a t=0"';<br />'V0="vitesse v en surface a t=0"';<br />'ZS="cote de la surface libre"';<br />'ZF="fond"';<br />'HW="hauteur d'eau au repos"';<br />'C="vitesse de phase"';<br />'CG="vitesse de groupe"';<br />'K="nombre d'onde"';<br />'PHIR="potentiel reel"';<br />'PHII="potentiel imaginaire"';<br />'D="prive(1,1)"';<br />'E="prive(1,2)"';<br />'F="prive(1,3)"';<br />'G="prive(1,4)"';<br />'T01="première période moyenne spectrale"';<br />'T02="deuxième période moyenne spectrale"';<br />'TM="troisième période moyenne spectrale"';<br />'FX="force en X"';<br />'FY="force en Y"';<br />'INC="incidence de la houle"';<br />'QB="taux de deferlement"';<br />'SXX="contrainte SXX"';<br />'SXY="contrainte SXY"';<br />'SYY="contrainte SYY"'</dd>
+    
+    </dl>
+    
+    <h2>VARIATION RAPIDE DE LA BATHYMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'PRISE EN COMPTE DES FORTES PENTES ET COURBURES DANS BERKHOFF<br />0=> BERKHOFF SIMPLE<br />1=> PRISE EN COMPTE TERME PENTE en grad(H) **2<br />2=> PRISE EN COMPTE TERME COURBURE en laplacien(H)<br />3=> PRISE EN COMPTE DES TERMES PENTE ET COURBURE<br />Modele retenu pour les fonctions E1 et E2 : Chamberlain<br />et Porter (1995)'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>' 0="0=> BERKHOFF SIMPLE                                "';<br />' 1="1=> PRISE EN COMPTE TERME DE PENTE                 "';<br />' 2="2=> PRISE EN COMPTE TERME DE COURBURE              "';<br />' 3="3=> PRISE EN COMPTE DES TERMES DE PENTE ET COURBURE"'</dd>
+    
+    </dl>
+    
+    <h2>VISCOSITE CINEMATIQUE DU FLUIDE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>viscosite cinematique du fluide (eau) en m2/s.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.0E-6</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1.793E-6 = " 1.793E-6 : Pour une temperature de 0 C."';<br />'1.567E-6 = " 1.567E-6 : Pour une temperature de 4 C."';<br />'1.237E-6 = " 1.237E-6 : Pour une temperature de 12 C."';<br />'1.112E-6 = " 1.112E-6 : Pour une temperature de 16 C."';<br />'1.011E-6 = " 1.011E-6 : Pour une temperature de 20 C."';<br />'0.802E-6 = " 0.802E-6 : Pour une temperature de 30 C."';<br />'0.661E-6 = " 0.661E-6 : Pour une temperature de 40 C."';<br />'1.0E-6   = " 1.0E-6   : Valeur par defaut"'</dd>
+    
+    </dl>
+    
+    <h2>ZERO</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Non active pour l'instant.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-12</dd>
+    
+    </dl>
+    
+
+  </body>
+</html>

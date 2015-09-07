@@ -1,0 +1,2027 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sisyphe</title>
+    <style>
+      h1 {
+        color: red;
+      }
+
+      h2 {
+        color: green;
+      }
+
+      dt {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      
+      <li><a href="artemis.xhtml">artemis</a></li>
+      
+      <li><a href="postel3d.xhtml">postel3d</a></li>
+      
+      <li><a href="sisyphe.xhtml">sisyphe</a></li>
+      
+      <li><a href="stbtel.xhtml">stbtel</a></li>
+      
+      <li><a href="telemac2d.xhtml">telemac2d</a></li>
+      
+      <li><a href="telemac3d.xhtml">telemac3d</a></li>
+      
+      <li><a href="tomawac.xhtml">tomawac</a></li>
+      
+    </ul>
+    <hr />
+    <h1>sisyphe</h1>
+
+    
+    <h2>ANGLE DE FROTTEMENT DU SEDIMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Angle de repos du sediment, intervient pour la prise de compte<br />de la pente sur la contrainte critique par la formule de Soulsby.<br />Utiliser si ...=2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>40.</dd>
+    
+    </dl>
+    
+    <h2>BANCS DECOUVRANTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>permet de supprimer les tests sur les bancs decouvrants, dans<br />les cas ou l'on est certain qu'il n'y en aura pas.<br />En cas de doute : oui</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>BETA</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la valeur du coefficient beta qui intervient dans la<br />formulation de l'effet de pente de Koch et Flokstra.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.3</dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUE PVM1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise par la procedure de lancement sur station de travail</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUE PVM2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise par la procedure de lancement sur station de travail</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise par la procedure de lancement sur station de travail.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SISYPHE,TELEMAC,UTIL,DAMO,BIEF,HP</dd>
+    
+    </dl>
+    
+    <h2>BILAN DE MASSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine si oui ou non le bilan de masse est realise.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>C-VSM DYNAMIC ALT MODEL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>5</dd>
+    
+    </dl>
+    
+    <h2>C-VSM FULL PRINTOUT PERIOD</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>C-VSM MAXIMUM SECTIONS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>200</dd>
+    
+    </dl>
+    
+    <h2>C-VSM PRINTOUT SELECTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0;0;0;0;0;0;0;0;0;0;0</dd>
+    
+    </dl>
+    
+    <h2>CAS PERMANENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit si l'hydrodynamique a prendre en compte est<br />permanente ou non. Si la valeur OUI est donnee a ce mot-cle,<br />le dernier enregistrement du fichier du calcul precedent<br />constituera le champ (h,u,v et eventuellement hauteur et periode<br />de houle) a prendre en compte.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CHARRIAGE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>calcul avec charriage</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>CODE DE CALCUL UTILISE POUR L'HYDRODYNAMIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>specifie le code utilise pour modeliser l'hydrodynamique</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT B DE LA FORMULE DE BIJKER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient b de la formule de Bijker</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2.D0</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient de Strickler<br />intervenant dans le calcul de la contrainte de<br />frottement au fond. Sa signification depend de<br />la LOI DE FROTTEMENT SUR LE FOND.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>50.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE PERMEABILITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient de permeabilite pour le modele de consolidation</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>8.D0</dd>
+    
+    </dl>
+    
+    <h2>CONCENTRATION D'EQUILIBRE EN ENTREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>impose la concentration en entree du domaine et les concentrations initiales<br />en utilisant la formule de Fredsoe pour les sediments non-cohesifs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CONCENTRATION GEL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Concentration de transition pour modele de Thiebot (Kg/m3)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>310.D0</dd>
+    
+    </dl>
+    
+    <h2>CONCENTRATION MASSIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>par defaut, le code calcule les concentrations volumiques.<br />Ce mot cle permet dimprimer et de relire des concentrations en g/l.<br />Les concentrations imposees aux limites<br />(fichier condim, concentration de condim_susp)<br />sont alors aussi donnees par l utilisateur en g/l et<br />reconverties en  concentration volumique par le code.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CONCENTRATION MAXIMALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Concentration maximale du modele de Thiebot (Kg/m3)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>364.D0</dd>
+    
+    </dl>
+    
+    <h2>CONCENTRATIONS DU LIT DE VASE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Concentration du lit de vase en g/ l - défini par couches</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>50. ;100.;150.;200.;250.;300.;350.;400.;450.;500.</dd>
+    
+    </dl>
+    
+    <h2>CONCENTRATIONS INITIALES EN SUSPENSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour la suspension, sert a initialiser la valeur<br />de la concentration volumique pour chaque classe. ne sera pas pris<br />en compte si CONCENTRATION EN ENTREE IMPOSEE=OUI</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.;0.;0.;0.;0.;0.;0.;0.;0.;0.</dd>
+    
+    </dl>
+    
+    <h2>CONCENTRATIONS PAR CLASSE AUX FRONTIERES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour la suspension, sert a initialiser la valeur<br />de la concentration volumique de chaque classe pour chaque frontiere<br />ordre : frontiere 1 (classe 1, classe 2, etc.) , puis frontiere 2, etc</dd>
+    
+    </dl>
+    
+    <h2>CONSTANT FLOW DISCHARGE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>constant flow discharge or not</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CONSTANTE DE PARTHENIADES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>constante de la loi d'erosion de la vase (Kg/m2/s)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-03</dd>
+    
+    </dl>
+    
+    <h2>CONTRAINTE CRITIQUE D'EROSION DE LA VASE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Taux critique d erosion de la vase needs to be defined<br />for each layer (N par m2)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.01;0.02;0.03;0.04;0.05;0.06;0.07;0.08;0.09;1.</dd>
+    
+    </dl>
+    
+    <h2>COORDONNEES DE L'ORIGINE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur en metres, utilise pour eviter les trop grands nombres, transmis<br />dans le format Selafin mais pas d'autre traitement pour l'instant</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0</dd>
+    
+    </dl>
+    
+    <h2>CORRECTION DU CHAMP CONVECTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Modification du champ convecteur 2D pour prise en compte du gradient vertical<br />de vitesse et concentration</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CORRECTION FROTTEMENT DE PEAU</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>prise en compte du frottement de peau (voir aussi KSPRATIO)<br />0 : pas de correction (TAUP= TOB)<br />1 : fond plat (KSP= KSPRATIO * D50)<br />2 : prise en compte des rides</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>COURANTS SECONDAIRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour prendre en compte les courants secondaires</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CRITERE POUR METTRE A JOUR L'HYDRODYNAMIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Critere (Hauteur du fond>CRIT_CFD*Hauteur d'eau) pour mettre<br />a jour l'ecoulement.<br />A utiliser avec l'option constant flow discharge</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.1</dd>
+    
+    </dl>
+    
+    <h2>D90</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Sets value of diameter d90 for particular size class.<br />Si le mot cle n est pas entre, la valeur par defaut est<br />celle du diametre moyen des grains</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>.01;.01;.01;.01;.01;.01;.01;.01;.01;.01</dd>
+    
+    </dl>
+    
+    <h2>DATE DE L'ORIGINE DES TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de fixer la date d'origine des temps du modele lors<br />de la prise en compte de la force generatrice de la maree.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0</dd>
+    
+    </dl>
+    
+    <h2>DEBITS SOLIDES IMPOSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des debits solides imposes aux frontieres<br />liquides entrantes (m3/s sans les vides).<br />Une valeur par frontiere liquide</dd>
+    
+    </dl>
+    
+    <h2>DEBUGGER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour imprimer la sequence des appels, mettre 1</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>DESCRIPTION DES LIBRAIRIES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Description des librairies de SISYPHE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|lib|sisypheMMMVVV.LLL';<br />'builds|PPP|lib|dredgesimMMMVVV.LLL';<br />'builds|PPP|lib|biefMMMVVV.LLL';<br />'builds|PPP|lib|damoMMMVVV.LLL';<br />'builds|PPP|lib|parallelMMMVVV.LLL';<br />'builds|PPP|lib|specialMMMVVV.LLL</dd>
+    
+    </dl>
+    
+    <h2>DIAMETRE MOYEN DES GRAINS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Sets value of diameter dm for particular size class.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>.01;.01;.01;.01;.01;.01;.01;.01;.01;.01</dd>
+    
+    </dl>
+    
+    <h2>DIAMETRES DES GRAINS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Sets value of diameter dm for particular size class.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>.01;.01;.01;.01;.01;.01;.01;.01;.01;.01</dd>
+    
+    </dl>
+    
+    <h2>DICTIONNAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Dictionnaire des mots cles.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>sisyphev6p2.dico</dd>
+    
+    </dl>
+    
+    <h2>DIFFUSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte de la diffusion de la concentration de sediment<br />en suspension</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>DISPERSION LONGITUDINALE</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-2</dd>
+    
+    </dl>
+    
+    <h2>DISPERSION TRANSVERSALE</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-2</dd>
+    
+    </dl>
+    
+    <h2>DREDGESIM</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour le couplage avec DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>EFFET DE PENTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte de l'effet de pente :<br />deviation et modification du seuil critique.<br />NON supprime les mots-cles<br />POUR EFFET DE PENTE et  POUR LA DEVIATION</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>EPAISSEUR DE COUCHE ACTIVE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Epaisseur de reference pour la stratification du lit. La<br />composition de la premiere couche sert a calculer le transport<br />solide. Utiliser une tres grande valeur pour ne pas avoir de<br />stratification.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10000</dd>
+    
+    </dl>
+    
+    <h2>EPAISSEUR DE COUCHE ACTIVE CONSTANTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>epaisseur de couche active constante ou non</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>EXECUTABLE PAR DEFAUT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Executable par defaut de SISYPHE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|bin|sisypheMMMVVV.exe</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de commandes de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM CFG4</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de phydef.cfg.rest.ds de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM DE SURFACE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de reference surface de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM DICO</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de DredgeSim dico</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM IPDS DICO</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de DredgeSim ipds dico</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM PHYDEF CFG1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de phydef-cf.cfg.ds de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM PHYDEF CFG2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de phydef.cfg.de.ds de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM PHYDEF CFG3</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de phydef.cfg.en.ds de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM PHYDEF CFG5</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de phydef.cfg.si.ds de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DREDGESIM POLYGON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier de polygons de DredgeSim</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant le maillage du calcul a realiser.</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom d'un fichier contenant les resultats d'un calcul<br />precedent TOMAWAC realise sur le meme maillage. La houle sera donnee,<br />par le dernier pas de temps<br />de ce fichier . Seules les donnees de houle de ce fichier<br />seront conservees (hauteur de houle, periode de<br />houle, angle de la houle).<br />Les donnees hydrodynamiques(hauteur d'eau,vitesses) seront lues<br />dans le fichier hydrodynamique (Verifier la compatibilite !!!)<br />Les donnees de houle peuvent aussi etre imposees<br />par l'utilisateur dans le sous programme CONDIM_SISYPHE.<br />ou encore lues dans le fichier hydrodynamique.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier servant a valider le calcul.<br />Si VALIDATION = OUI, les resultats du calcul vont etre<br />comparees aux valeurs contenues dans ce fichier.<br />La comparaison est effectuee par le sous-programme VALIDA.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES CONDITIONS AUX LIMITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les types de conditions aux limites.<br />Ce fichier est rempli de facon automatique par le mailleur au moyen de<br />couleurs affectees aux noeuds des frontieres du domaine de calcul.</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES FONDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier facultatif contenant la bathymetrie<br />associee au maillage.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES FRONTIERES LIQUIDES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de variations en temps des conditions aux limites.<br />Les donnees de ce fichier sont sur le canal SIS_FILES(SISLIQ)%LU.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les parametres du calcul<br />a realiser. Il peut-etre ecrit par l'utilisateur avec EDAMOX.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier dans lequel seront ecrits les resultats avec<br />une periodicite donnee par le mot cle PERIODE DE SORTIE GRAPHIQUE.</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES SECTIONS DE CONTROLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>sections input file, partitioned</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER FORTRAN</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier FORTRAN a soumettre.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>DEFAUT</dd>
+    
+    </dl>
+    
+    <h2>FICHIER HYDRODYNAMIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom d'un fichier contenant les resultats d'un calcul<br />precedent realise sur le meme maillage. L'hydrodynamique<br />du calcul sera donnee, soit par le dernier pas de temps<br />de ce fichier si le calcul est permanent,<br />soit par les pas de temps representant la maree<br />ou la crue consideree si le calcul est instationnaire<br />Remarque : Si l'on modelise le transport sous l'action<br />combinee du courant et de la houle (mot-cle  DE<br />TRANSPORT SOLIDE =4) ce fichier doit contenir non<br />seulement les donnees hydrodynamiques(hauteur d'eau,vitesses)<br />mais aussi les donnees de houle (hauteur de houle, periode de<br />houle).Les donnees de houle peuvent toutefois etre imposees<br />par l'utilisateur dans le sous programme CONDIM.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER PRECEDENT SEDIMENTOLOGIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom d'un fichier contenant les resultats d'un<br />calcul precedent sedimentologique realise sur le meme maillage<br />et dont le dernier pas de temps enregistre va fournir les<br />conditions initiales pour une suite de de calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de geometrie.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de houle.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DES RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER HYDRODYNAMIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER PRECEDENT SEDIMENTOLOGIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORME DE LA CONVECTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine le schema utilise pour la convection :<br />1: caracteristiques<br />2: schema semi-implicite + supg<br />3 et 4: schema N<br />5: schema psi<br />6: schema psi non conservatif<br />7: schema N non conservatif<br />13 et 14: schema N par segment (recommande pour les bancs decouvrants)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1="CARACTERISTIQUES"';<br />'2="SUPG"';<br />'3="SCHEMA N CONSERVATIF"' ;<br />'4="SCHEMA N CONSERVATIF"' ;<br />'5="SCHEMA PSI CONSERVATIF"';<br />'6="SCHEMA PSI NON CONSERVATIF"';<br />'7="SCHEMA N IMPLICITE NON CONSERVATIF"';<br />'13="SCHEMA N PAR SEGMENTS"';<br />'14="SCHEMA N PAR SEGMENTS"'</dd>
+    
+    </dl>
+    
+    <h2>FORMULATION POUR DEPOT ET EROSION</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1="KRONE ET PARTHENIADES"';<br />'2="FREDSOE / ROUSE"'</dd>
+    
+    </dl>
+    
+    <h2>FORMULE DE TRANSPORT SOLIDE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>10 formules de transport solide sont implementees dans SISYPHE.<br />Les formules Ne3, Ne30 et Ne9 ne doivent pas etre utilisees en cas de couplage avec la suspension.<br />Les formules Ne4, Ne5, Ne8 and Ne9 calculent le taux de transport sous l'action combinee<br />de la houle et du courant :<br />1 : MEYER-PETER (charriage)<br />2 : EINSTEIN-BROWN (charriage)<br />3 : ENGELUND-HANSEN + CHOLLET ET CUNGE (VERSION 5.3)<br />30: ENGELUND-HANSEN (total)<br />4 : BIJKER (charriage + suspension)<br />5 : SOULSBY - VAN RIJN (charriage + suspension)<br />6 : HUNZIKER (uniquement granulometrie etendue)<br />DE MASQUAGE DE HUNZIKER APPLIQUEE<br />et mot-cle HIDING-FACTOR not used<br />7 : VAN RIJN (bed load)<br />8 : BAILARD (charriage + suspension)<br />9 : DIBAJNIA ET WATANABE (total)<br />L'utilisateur a aussi la possibilite d'imposer une autre formule de<br />transport solide (sous-programme QSFORM.F) en fixant la valeur<br />du mot cle a 0 :<br />0 :  IMPOSEE PAR L'UTILISATEUR<br />Attention : dans ce cas, il n'est pas possible de choisir l'option<br />PAS DE TEMPS VARIABLE.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>FORMULE POUR EFFET DE PENTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : formule de Koch et Flokstra, modifie le transport solide<br />mot cle associe : BETA<br />2 : formule de Soulsby, modifie la contrainte seuil, ne peut<br />donc etre utilisee que avec une formule a seuil.<br />mot cle associe : ANGLE DE REPOS DU SEDIMENT</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>FORMULE POUR LA CONCENTRATION DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : formule de Zyserman et Fredsoe<br />2 : methode de Bijker. La concentration au fond<br />est reliee au taux de transport par charriage<br />3 : formule de Van Rijn (1987)<br />4 : formule de Soulsy_van Rijn</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>FORMULE POUR LA DEVIATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : Koch et Flokstra<br />2 : formule de Talmon et al. 1995, JHR 33(4) formules (1) et (17)<br />mot cle associe : BETA2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>FRACTION INITIALE PAR CLASSE SEDIMENTOLOGIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Sets value of initial fraction for particular size class.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.;0.;0.;0.;0.;0.;0.;0.;0.;0.</dd>
+    
+    </dl>
+    
+    <h2>FREE INTEGER 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>FREE INTEGER 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>FREE LOGICAL 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>GLISSEMENT DU SEDIMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte de la pente d'equilibre du sable donnee par le mot-cle<br />ANGLE DE FROTTEMENT DU SEDIMENT</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>GRAIN-FEEDING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Now suppressed</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>GRAVITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de l'acceleration de la pesanteur.<br />M/S2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>9.81</dd>
+    
+    </dl>
+    
+    <h2>HEURE DE L'ORIGINE DES TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de fixer l'heure d'origine des temps du modele lors<br />de la prise en compte de la force generatrice de la maree.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0</dd>
+    
+    </dl>
+    
+    <h2>HIDING FACTOR FORMULA</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>4 formules pour le hiding factor sont programmees dans SISYPHE<br />0: const => il faut donner le HIDING FACTOR PAR CLASSE GRANULO<br />1: Egiazaroff<br />2: Ashida &amp; Michiue<br />:<br />4: Karim, Holly &amp; Yang</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>HIDING FACTOR PAR CLASSE GRANULO</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du facteur de pavage par classe<br />granulometrique</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.;1.;1.;1.;1.;1.;1.;1.;1.;1.</dd>
+    
+    </dl>
+    
+    <h2>LISTE DES FICHIERS</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>FICHIER DE GEOMETRIE';<br />'FICHIER DES CONDITIONS AUX LIMITES';<br />'FICHIER DES RESULTATS';<br />'FICHIER DES FONDS';<br />'FICHIER DE REFERENCE';<br />'FICHIER PRECEDENT SEDIMENTOLOGIQUE';<br />'FICHIER DU CALCUL PRECEDENT';<br />'FICHIER HYDRODYNAMIQUE';<br />'FICHIER DE HOULE';<br />'FICHIER FORTRAN';<br />'FICHIER DES PARAMETRES';<br />'FICHIER DE DREDGESIM';<br />'FICHIER DE DREDGESIM POLYGON';<br />'FICHIER DE DREDGESIM DE SURFACE REFERENCE';<br />'FICHIER DE DREDGESIM DICO';<br />'FICHIER DE DREDGESIM IPDS DICO';<br />'FICHIER DE DREDGESIM CFG1';<br />'FICHIER DE DREDGESIM CFG2';<br />'FICHIER DE DREDGESIM CFG3';<br />'FICHIER DE DREDGESIM CFG4';<br />'FICHIER DE DREDGESIM CFG5';<br />'DICTIONNAIRE';<br />'SECTIONS INPUT FILE';<br />'SECTIONS OUTPUT FILE';<br />'FICHIER DES FRONTIERES LIQUIDES</dd>
+    
+    </dl>
+    
+    <h2>LOGICIEL DE DESSIN</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le logiciel graphique choisi pour la realisation des<br />sorties graphiques :<br />1: LEONARD<br />2: RUBENS<br />3: SELAFIN.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>LOGICIEL DE DESSIN DU CALCUL PRECEDENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le logiciel graphique choisi pour la realisation des<br />sorties graphiques du calcul precedent :<br />1: LEONARD<br />2: RUBENS<br />3: SELAFIN.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>LOI DE FROTTEMENT SUR LE FOND</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Selectionne le type de formulation utilisee pour le calcul<br />du frottement sur le fond, voir COEFFICIENT DE FROTTEMENT.<br />Pour les lois possibles, voir CHOIX ci-dessus (cf. Note de principe).<br />En cas de couplage avec Telemac, le choix du frottement est impose par Telemac, sauf<br />si le mot-cle :PREDICTION DE LA RUGOSITE est mis a OUI</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="CHEZY"';<br />'3="STRICKLER"';<br />'4="MANNING"';<br />'5="NIKURADSE"</dd>
+    
+    </dl>
+    
+    <h2>LONGUEUR DU VECTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>longueur du vecteur pour les machines vectorielles.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>MAILLEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>MAILLEUR  1: MAILLEUR DIFFERENCES FINIES AU STANDARD LEONARD<br />2: MAILLEUR ELEMENTS FINIS AU STANDARD PABLO 2D<br />3: MAILLEUR ELEMENTS FINIS AU STANDARD SELAFIN.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>MASS-LUMPING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si oui, on effectue du mass-lumping sur la cote du fond.<br />Ceci revient a ramener toute la matrice de masse sur sa<br />diagonale lors de la resolution du systeme. Cette technique permet<br />d'accelerer le code et de le rendre egalement plus stable. Cependant,<br />les solutions obtenues se trouvent lissees.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>MASSE VOLUMIQUE DE L'EAU</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de la masse volumique de l'eau.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1000.</dd>
+    
+    </dl>
+    
+    <h2>MASSE VOLUMIQUE DU SEDIMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de la masse volumique du sediment<br />en Kg/m3</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2650.</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR LE SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Les algorithmes utilises pour la resolution de l'etape de<br />propagation etant iteratifs; il est necessaire de limiter le nombre<br />d'iterations autorisees.<br />Remarque : Ce parametre n'est utilise que si le mot cle MASS LUMPING<br />est egal a faux.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>60</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR LE SOLVEUR POUR LA SUSPENSION</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>50</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR LES SCHEMAS DE CONVECTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Seulement pour schemes 13 et 14</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+    <h2>MORPHOLOGICAL FACTOR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.0E-00</dd>
+    
+    </dl>
+    
+    <h2>MOT DE PASSE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Mot de passe associe a l'USER CRAY.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>MPM COEFFICIENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>8.0E-00</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE D'ITERATIONS POUR TELEMAC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre d'iteration a effecuter avec telemac pour obtenir<br />un nouvel ecoulement quasi stationnaire.<br />A utiliser avec l'option constant flow discharge</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>500</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE CLASSES GRANULOMETRIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du nombre de classes granulometriques<br />de grains considerees dans le calcul</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE COUCHES POUR GRANULO ETENDUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Comme son nom l'indique..., defaut NOMBLAY</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE COUCHES POUR LE TASSEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Structure verticale du lit cohesif- le nombre de couche doit<br />etre inferieur à 10</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE MAREES OU CRUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>En non permanent, definit le nombre de marees ou de crues<br />effectuees lors de l'execution du code.En permanent, ce mot-cle<br />n'est pas utilise.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE PAS DE TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit, en permanent, le nombre de pas de temps effectues<br />lors de l'execution du code. En non permanent, ce mot-cle<br />n'est pas utilise.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE SOUS-ITERATIONS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>permet de realiser des sous iterations au sein de la<br />boucle en temps (En mode non permananet).<br />Peut etre utile en non permanent lorsque le<br />pas de temps qui est donne par le pas de sortie graphique du<br />FICHIER DE CALCUL PRECEDENT est trop grand.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE TABLEAUX PRIVES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de tableaux mis a disposition de l utilisateur</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE VERSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Numero de version des bibliotheques utilisees par SISYPHE.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>V7P0</dd>
+    
+    </dl>
+    
+    <h2>OPTION DE SUPG</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    </dl>
+    
+    <h2>OPTION DE TRAITEMENT DES BANCS DECOUVRANTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise si 'BANCS DECOUVRANTS' est vrai<br />1 : EQUATIONS RESOLUES PARTOUT AVEC CORRECTION<br />SUR LES BANCS DECOUVRANTS<br />2 : GEL DES ELEMENTS DECOUVRANTS<br />Il est conseille de choisir l'option 1 car elle permet de<br />conserver la masse.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DE TRAITEMENT DES FONDS NON ERODABLES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Ce parametre permet de fixer la methode retenue pour traiter<br />les fonds non erodables :<br />0 = FONDS ERODABLES PARTOUT<br />1 = MINIMISATION DU DEBIT SOLIDE POUR LES FONDS NON ERODABLES<br />2 = DEBIT SOLIDE NUL POUR LES FONDS NON ERODABLES<br />3 = MINIMISATION DU DEBIT SOLIDE EN ELEMENTS FINIS/MASS-LUMPING<br />4 = MINIMISATION DU DEBIT SOLIDE EN VOLUMES FINIS<br />Quand le fond rigide peut etre atteint lors de la simulation, il est<br />conseille d utiliser la metode 3 ou bien 4</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU MODELE DE TASSEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 :Modele multicouche de Walther,<br />2: Modele de Thiebot (Gibson theory),<br />3: Modele de Lenormant</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU PREDICTEUR DE RUGOSITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : Fond plat ks<br />2: Fond ride (methode de Wiberg et Harris),<br />3: Dunes et megarides (methode de Van Rijn)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SCHEMA POUR LA CONVECTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si present remplace et a priorite sur :<br />OPTION POUR LES CARACTERISTIQUES (pas programme)<br />OPTION DE SUPG<br />Avec schema PSI : 1=explicit 2=predicteur-correcteur<br />pour les traceurs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>si le solveur est GMRES (7) le mot cle est la dimension de<br />l'espace de KRILOV (valeurs conseillees entre 2 et 15). Ce parametre<br />n'est utilise que si le mot cle MASS LUMPING est egal a faux.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SOLVEUR POUR LA SUSPENSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Parametre supplementaire disponible pour le solveur.<br />Dans le cas du solveur gmres, il s'agit de la dimension<br />de l'espace de Krylov.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LA DIFFUSION DU TRACEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1: Diffusion de la forme div( nu grad(T) )<br />2: Diffusion de la forme 1/h div ( h nu grad(T) )</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="1/h div ( h nu grad(T)"</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LA DISPERSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 les mots cles dispersion longitudinale<br />et dispersion transversale permettent d affecter une valeur constante,<br />2 K1=alphal u*h et K2=alphat u*h affectent les valeurs alphal et alphat<br />(par default alphal=6 et alphat=0.6, 3 dipersion fournie par<br />telemac2d</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PARAMETRE POUR LA DEVIATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Parametre pour la deviation causee par effet de pente<br />pour la formule de Talmon et al.<br />Une valeur elevee provoque une faible deviation</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.85</dd>
+    
+    </dl>
+    
+    <h2>PARAMETRES DE SHIELDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise pour determiner la valeur de la contrainte critique<br />d'entrainement (sédiments non-cohésifs). En multiclasse, specifier la valeur<br />pour chaque classe,sinon on prend la même valeur.<br />Par défaut (si aucune valeur donnee) le code calcule lui<br />même le parametre de Shields en fonction du diametre.</dd>
+    
+    </dl>
+    
+    <h2>PAS DE TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le pas de temps du calcul en secondes en<br />permanent. En non permanent, ce pas de temps est donne par le<br />pas de sortie graphique du fichier precedent. Mais si aucun<br />nom n'est donne pour le 'FICHIER DU CALCUL PRECEDENT' (les<br />variables hydrodynamiques pouvant etre imposees dans CONDIM),<br />la valeur du pas de temps donnee dans le fichier des<br />parametres est la aussi consideree.<br />Remarque : si le mot-cle "PAS DE TEMPS VARIABLE EST EGAL A OUI"<br />le pas de temps necessaire a une bonne resolution est calcule<br />dans le code et des sous iterations sont realisees.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE LA MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de la periode de l'evenement<br />(maree ou crue) en non permanent.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>44640.</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE SORTIE GRAPHIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la periode en nombre de pas de temps d'impression<br />des 'VARIABLES POUR LES SORTIES GRAPHIQUES' (voir ce mot-cle)<br />dans le 'FICHIER DES RESULTATS'.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE SORTIE LISTING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la periode en nombre de pas de temps d'impression<br />des 'VARIABLES A IMPRIMER' (voir ce mot-cle).<br />La sortie des resultats est effectuee sur le fichier listing<br />(fichier cas_numerodeprocessus.sortie sur station de travail).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PLACE MEMOIRE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Place memoire (en mots de 8 octets) reservee en machine pour la<br />realisation du calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1500000W</dd>
+    
+    </dl>
+    
+    <h2>POROSITE DU LIT NON COHESIF</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>la concentration volumique  du lit est definie par<br />CSF= (1-porosite)<br />Ce paramètre est utilisé  pour les sediments non-cohesifs.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.4</dd>
+    
+    </dl>
+    
+    <h2>PRECISION DU SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Precision demandee pour la resolution du systeme<br />(ce parametre n'est utilise que si le mot cle MASS LUMPING<br />est egal a faux).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-7</dd>
+    
+    </dl>
+    
+    <h2>PRECISION DU SOLVEUR POUR LA SUSPENSION</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-8</dd>
+    
+    </dl>
+    
+    <h2>PRECONDITIONNEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de preconditionner le systeme lineaire afin d'accelerer<br />la convergence lors de sa resolution (ce parametre n'est utilise que<br />si le mot cle MASS LUMPING est egal a faux).<br />- 0 : pas de preconditionnement;<br />- 2 : preconditionnement diagonal.<br />- 3 : preconditionnement diagonal-bloc<br />- 7 : preconditionnement de Crout par element.<br />Certains preconditionnements sont cumulables<br />(les diagonaux 2 ou 3 avec les autres)<br />Pour cette raison on ne retient que les nombres premiers pour<br />designer les preconditionnements. Si l'on souhaite en cumuler<br />plusieurs on formera le produit des options correspondantes.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>2<br />'3="diagonal condensee"'; '7="crout"';<br />'14="diagonal et crout"'; '21="diagonal condense et crout"</dd>
+    
+    </dl>
+    
+    <h2>PRECONDITIONNEMENT POUR LA SUSPENSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de preconditionner le systeme de l'etape de propagation<br />afin d'accelerer la convergence lors de sa resolution.<br />- 0 : pas de preconditionnement,<br />- 2 : preconditionnement diagonal.<br />- 3 : preconditionnement diagonal avec la matrice condensee.<br />- 7 : preconditionnement de Crout par element.<br />Certains preconditionnements sont cumulables<br />(les diagonaux 2 ou 3 avec les autres)<br />Pour cette raison on ne retient que les nombres premiers pour<br />designer les preconditionnements. Si l'on souhaite en cumuler<br />plusieurs on formera le produit des options correspondantes.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>2<br />'3="diagonal condensee"'; '7="crout"</dd>
+    
+    </dl>
+    
+    <h2>PREDICTION DE LA RUGOSITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Calcul de la rugosite de Nikuradse<br />- voir OPTION DU PREDICTEUR DE RUGOSITE -<br />la loi de frottement est forcee a 5 et le coefficient de frottement<br />ne sont pas utilisés.<br />En cas de couplage, le frottement est envoye a Telemac</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>PRISE EN COMPTE DE LA HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prend en compte l'effet de la houle sur le transport solide</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>PROCESSEURS PARALLELES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>NOMBRE DE PROCESSEURS EN CALCUL PARALLELE<br />0 : 1 machine, compilation sans bibliotheque de parallelisme<br />1 : 1 machine, compilation avec bibliotheque de parallelisme<br />2 : 2 processeurs ou machines en parallele<br />etc...</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>PRODUIT MATRICE-VECTEUR</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>RAPPORT D'EVOLUTION CRITIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le moment ou l'extrapolation du champ de courant<br />par SISYPHE n'est plus valable. Ce nombre represente le rapport<br />maximum entre les evolutions et la hauteur d'eau admissible.<br />Generalement, on admet qu'une evolution inferieure a 0,1 fois<br />la hauteur d'eau ne modifie pas sensiblement la repartition<br />du champ de courant.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>RATIO ENTRE LA RUGOSITE DE PEAU ET LE DIAMETRE MOYEN</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Ratio pour le calcul du frottement de peau.<br />rugosite de peau = ratio * diametre moyen.<br />( pour la granulometrie etendue, le diametre moyen utilise<br />est une valeur moyenne par noeud calculee a partir de la fraction<br />et du diametre moyen de chaque sediment en chaque noeud du maillage)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3.0</dd>
+    
+    </dl>
+    
+    <h2>SECONDARY CURRENTS ALPHA COEFFICIENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.0E-00</dd>
+    
+    </dl>
+    
+    <h2>SECTIONS DE CONTROLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Couples de points (numeros globaux dans le maillage) entre<br />lesquels les debits instantanes et cumules seront donnes.</dd>
+    
+    </dl>
+    
+    <h2>SECTIONS OUTPUT FILE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>sections output file, written by the master</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>SEDIMENT MIXTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Melange sable vase: 2 classes seulement</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SEDIMENTS COHESIFS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0;0;0;0;0;0;0;0</dd>
+    
+    </dl>
+    
+    <h2>SETTLING LAG</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de choisir le solveur utilise pour la resolution de<br />l'equation de continuite sur le fond (ce parametre n'est utilise<br />que si le mot cle MASS LUMPING est egal a faux). Toutes les methodes<br />proposees actuellement s'apparentent au Gradient Conjugue. Ce sont :<br />1 : gradient conjugue<br />2 : residu conjugue<br />3 : gradient conjugue sur equation normale<br />4 : erreur minimale<br />5 : gradient conjugue carre (non programme)<br />6 : gradient conjugue carre stabilise (cgstab)<br />7 : gmres (voir aussi option du solveur)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>3<br />'1="gradient conjuge"';<br />'2="residu conjuge"';<br />'4="erreur minimale"';<br />'6="cgstab"';<br />'7="gmres"</dd>
+    
+    </dl>
+    
+    <h2>SOLVEUR POUR LA SUSPENSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de choisir le solveur utilise pour la resolution<br />de l'etape de propagation. Toutes les methodes proposees<br />actuellement s'apparentent au Gradient Conjugue. Ce sont :<br />1 : gradient conjugue<br />2 : residu conjugue<br />3 : gradient conjugue sur equation normale<br />4 : erreur minimale<br />7 : gmres</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="residu conjuge"';<br />'3="gradient conjuge sur equation normale"';<br />'4="erreur minimale"';<br />'7="gmres (voir ausi option du solveur)"</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DU FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type de binaire pour l'ecriture du fichier de geometrie.<br />Ce type depend de la machine ou ce fichier est genere.<br />Les differentes valeurs sont :<br />IBM, pour un fichier sur IBM (depuis un CRAY)<br />I3E, pour un fichier sur HP (depuis un CRAY)<br />STD, pour le type de binaire de la machine ou l'utilisateur<br />travaille. Les commandes standard READ et WRITE sont<br />alors utilisees.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DU FICHIER DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type de binaire pour l'ecriture du fichier de reference.<br />Ce type depend de la machine ou le fichier de reference est genere.<br />Les differentes valeurs sont identiques a celles du fichier<br />de geometrie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DU FICHIER HYDRODYNAMIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>obsolete</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DU FICHIER PRECEDENT SEDIMENTOLOGIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type de binaire pour l'ecriture du fichier precedent<br />sedimentologique. Ce type depend de la machine ou le fichier<br />precedent sedimentologique est genere. Les differentes valeurs<br />sont identiques a celles du fichier de geometrie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DU FICHIER RESULTAT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type de binaire pour l'ecriture du fichier des resultats.<br />Ce type depend de la machine ou le fichier des resultats est genere.<br />Les differentes valeurs sont identiques a celles du fichier de<br />geometrie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    </dl>
+    
+    <h2>STATIONARY MODE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>STOCKAGE DES MATRICES</h2>
+    <dl>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>SUITE DE CALCUL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine si le calcul en cours est independant de tout autre<br />resultat ou est une reprise effectuee a partir du resultat d'un calcul<br />precedent.<br />NON : Il s'agit du premier passage pour ce calcul et il est necessaire<br />de definir un jeu complet de conditions initiales<br />OUI : Il s'agit d'une reprise de calcul :<br />les conditions initiales sont constituees par le dernier pas de<br />temps du 'FICHIER PRECEDENT SEDIMENTOLOGIQUE' du fichier des parametres<br />utilise pour soumettre le calcul.<br />Par contre, l'ensemble des donnees du fichier des parametres<br />peuvent etre redefinies<br />De meme, il est necessaire de definir des conditions aux limites</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SUSPENSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>calcul avec suspension</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>TASSEMENT DU LIT COHESIF</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte du tassement par un modele multi-couche</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>TEMPS D'ORIGINE DE L'HYDROGRAMME</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Ce mot cle fixe le temps auquel le calcul SISYPHE debute<br />sauf en cas de suite de calcul car le temps initial est<br />alors lu sur le "fichier precedent sedimentologique". En non<br />permanent, ce mot cle designe de plus le temps correspondant<br />au premier enregistrement a lire dans le "fichier du calcul<br />precedent" contenant les donnees hydrodynamiques.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>-1000.</dd>
+    
+    </dl>
+    
+    <h2>TEMPS MACHINE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Temps CPU (en secondes) alloue pour la realisation du calcul.<br />Attention; il s'agit bien d'une chaine de caracteres.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+    <h2>TETA</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le coefficient d'implicitation du schema numerique.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>TETA SUSPENSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>implicitation factor for the deposition flux and the diffusion.<br />for teta =0, the deposition flux is only explicit.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>TITRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Titre du cas etudie.<br />Ce titre sera inscrit dans les sorties.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>TRAITEMENT DES FLUX AUX FRONTIERES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise pour les schemas PSI et N, avec option 2, on ne retrouve<br />pas exactement les valeurs imposees des traceurs,<br />mais le flux est correct</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>TRANSFERT DE MASSE PAR COUCHE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Mass transfert coefficients of<br />the multilayer consolidation model in s-1</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>5.D-05;4.5D-05;4.0D-05;3.5D-05;3.0D-05;<br />2.5D-05;2.0D-05;1.5D-05;1.0D-05;0.D0</dd>
+    
+    </dl>
+    
+    <h2>USER CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Userid CRAY de l'utilisateur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>VALEUR MINIMUM DE H</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur minimale de la hauteur d'eau.<br />Est utilise lorsque le mot cle BANCS DECOUVRANTS est egal a oui.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-3</dd>
+    
+    </dl>
+    
+    <h2>VALIDATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Option utilisee principalement pour le dossier de validation.<br />Si ce mot-cle vaut OUI, les resultats du calcul vont alors etre<br />compares aux valeurs du fichier de reference.<br />La comparaison est effectuee par le sous-programme VALIDA qui peut<br />etre modifie pour realiser, par exemple, une comparaison avec<br />une solution exacte.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>VARIABLES A IMPRIMER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom des variables que l'utilisateur desire ecrire sur<br />le lisring. Meme possibilites que pour les sorties graphiques.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>U<br />'V="vitesse suivant l'axe des y (m/s)"';<br />'C="celerite"';<br />'H="hauteur d'eau (m)"';<br />'S="cote de la surface libre (m)"';<br />'B="cote du fond (m)"';<br />'F="nombre de Froude"';<br />'Q="debit"';<br />'I="composante du debit selon l'axe des x"';<br />'J="composante du debit selon l'axe des y"';<br />'M="debit solide"';<br />'N="composante du debit solide selon l'axe des x"';<br />'P="composante du debit solide selon l'axe des y"';<br />'E="evolution du fond"';<br />'R="fonds non erodables"';<br />'W="hauteur de houle"';<br />'X="periode de houle"';<br />'KS="coefficient de frottement (m)"';<br />'TOB="frottement moyen (N/m2)"';<br />'THETAW="angle entre la houle et l'axe Oy (deg)"';<br />'1Ai="fraction de sediment de la classe i dans la premiere couche"';<br />'2Ai="fraction de sediment de la classe i dans la deuxieme couche"';<br />'QSi="debit solide pour la classe i"';<br />'CSi="concentration pour la classe i"';<br />'*ES = "thicknes of bed layer i"';<br />'*CONC= "concentration of bed layer i "';<br />'A="variable supplementaire A"';<br />'G="variable supplementaire G"';<br />'L="variable supplementaire L"';<br />'O="variable supplementaire O"</dd>
+    
+    </dl>
+    
+    <h2>VARIABLES POUR LES SORTIES GRAPHIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms des variables que l'utilisateur veut ecrire dans<br />le fichier des resultats.<br />Chaque variable est representee par une lettre.<br />Le choix des separateurs est libre. Voir CHOIX ci-dessus.<br />On peut utiliser *, *A* signifie : toutes les fractions</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>U,V,H,S,B,E</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>U<br />'V="vitesse suivant l'axe des y (m/s)"';<br />'C="celerite"';<br />'H="hauteur d'eau (m)"';<br />'S="cote de la surface libre (m)"';<br />'B="cote du fond (m)"';<br />'F="nombre de Froude"';<br />'Q="debit"';<br />'I="composante du debit selon l'axe des x"';<br />'J="composante du debit selon l'axe des y"';<br />'M="debit solide"';<br />'N="composante du debit solide selon l'axe des x"';<br />'P="composante du debit solide selon l'axe des y"';<br />'E="evolution du fond"';<br />'R="fonds non erodables"';<br />'W="hauteur de houle"';<br />'X="periode de houle"';<br />'UWB="wave orbital velocity (m/s)"';<br />'KS="coefficient de Rugosité totale (m)"';<br />'TOB="Contrainte de frottement(N/m2)"';<br />'MU = "Coefficient de correction pour frottement de peau"';<br />'D50 = "Diametre moyen du sediment"';<br />'THETAW="angle entre la houle et l'axe Oy (deg)"';<br />'QSSUSP="taux de transport en suspension"';<br />'QSBL="taux de transport par charriage"';<br />'1Ai="fraction de sediment de la classe i dans la premiere couche"';<br />'2Ai="fraction de sediment de la classe i dans la deuxieme couche"';<br />'kAi="fraction of sediment of class i in the k layer"';<br />'kES="thickness of the k layer"';<br />'kCONC="concentration of bed layer k"';<br />'QSi="debit solide pour la classe i"';<br />'CSi="concentration volumique ou g/l pour la classe i"';<br />'CSAT="concentration volumique equil. ou g/l"';<br />'A="variable supplementaire A"';<br />'G="variable supplementaire G"';<br />'L="variable supplementaire L"';<br />'O="variable supplementaire O"</dd>
+    
+    </dl>
+    
+    <h2>VERTICAL GRAIN SORTING MODEL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>(-)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>VISCOSITE CINEMATIQUE EAU</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit la viscosite cinematique de l'eau.<br />M/S2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-6</dd>
+    
+    </dl>
+    
+    <h2>VITESSE CRITIQUE DE DEPOT DE LA VASE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Vitesse critique de depot de la vase (m/s)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1000.</dd>
+    
+    </dl>
+    
+    <h2>VITESSES DE CHUTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pas de valeur par defaut<br />Si non donne par l utilisateur, on utilise la subroutine vitchu-sisyphe :<br />formules de Stokes, Zanke ou Van Rijn, selon la taille des grains</dd>
+    
+    </dl>
+    
+    <h2>VOLUMES FINIS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Methodes volumes finis ou pas</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>ZERO</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe le zero du code.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-6</dd>
+    
+    </dl>
+    
+
+  </body>
+</html>

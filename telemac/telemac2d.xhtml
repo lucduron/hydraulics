@@ -1,0 +1,3415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>telemac2d</title>
+    <style>
+      h1 {
+        color: red;
+      }
+
+      h2 {
+        color: green;
+      }
+
+      dt {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      
+      <li><a href="artemis.xhtml">artemis</a></li>
+      
+      <li><a href="postel3d.xhtml">postel3d</a></li>
+      
+      <li><a href="sisyphe.xhtml">sisyphe</a></li>
+      
+      <li><a href="stbtel.xhtml">stbtel</a></li>
+      
+      <li><a href="telemac2d.xhtml">telemac2d</a></li>
+      
+      <li><a href="telemac3d.xhtml">telemac3d</a></li>
+      
+      <li><a href="tomawac.xhtml">tomawac</a></li>
+      
+    </ul>
+    <hr />
+    <h1>telemac2d</h1>
+
+    
+    <h2>ABSCISSES DES SOURCES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des abscisses des sources de debit et de traceur.</dd>
+    
+    </dl>
+    
+    <h2>ACCELERATION DE LA PESANTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de l'acceleration de la pesanteur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>9.81</dd>
+    
+    </dl>
+    
+    <h2>ARRET SI UN ETAT PERMANENT EST ATTEINT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>A UTILISER AVEC LE MOT-CLE : CRITERES D'ARRET</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>AUGMENTATION DU FROTTEMENT PAR LA HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Active la prise en compte des interactions non-lineaires entre la houle<br />et les courant pour le calcul du courant de houle<br />(cf OConnor and Yoo, 1988, Coast Eng.12.)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>BANCS DECOUVRANTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>permet de supprimer les tests sur les bancs decouvrants, dans<br />les cas ou l'on est certain qu'il n'y en aura pas.<br />En cas de doute : oui</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>BASE ASCII DE DONNEES DE MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Base de donnees de constantes harmoniques<br />tirees du fichier du modele de maree.<br />Ancien nom en version 6.1 : BASE DE DONNEES DE MAREE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>BASE BINAIRE 1 DE DONNEES DE MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Base de donnees binaire 1 tiree du fichier du modele de maree.<br />Dans le cas des donnees satellitaires de TPXO, ce fichier correspond<br />aux donnees de niveau d'eau, par exemple h_tpxo7.2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>BASE BINAIRE 2 DE DONNEES DE MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Base de donnees binaire 2 tiree du fichier du modele de maree.<br />Dans le cas des donnees satellitaires de TPXO, ce fichier correspond<br />aux donnees de vitesse de marrees, par exemple u_tpxo7.2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>BASE DE DONNEES DE MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour JMJ, renseigner la localisation du fichier bdd_jmj et geofin<br />dans les mots-cles BASE DE DONNEES DE MAREE et FICHIER DU MODELE DE MAREE.<br />Pour TPXO, LEGOS-NEA, FES20XX et PREVIMER, l'utilisateur doit telecharger<br />les fichiers de constantes harmoniques sur internet</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>-1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'-1="PAS DE VALEUR PAR DEFAUT. CHOISIR LA BASE PARMI LES CHOIX POSSIBLES"';<br />'1="JMJ"';<br />'2="TPXO"';<br />'3="DIVERS (LEGOS-NEA, FES20XX, PREVIMER...)"'</dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUE PVM1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise par la procedure de lancement sur station de travail</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>" "<br />'"$PVM_ROOT/lib/$PVM_ARCH/libpvm3.a"="bibliotheque PVM1"</dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUE PVM2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise par la procedure de lancement sur station de travail</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>" "<br />'"$PVM_ROOT/lib/$PVM_ARCH/libgpvm3.a"="bibliotheque PVM2"</dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Obsolete</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>BILAN DE MASSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine si l'on effectue ou non le bilan de masse<br />sur le domaine.<br />Cette procedure calcule a chaque pas de temps :<br />- les flux aux entrees et sorties du domaine;<br />- le flux global a travers l'ensemble des parois du domaine (liquides<br />ou solides)<br />- l'erreur relative sur la masse pour ce pas de temps.<br />En fin de listing, on trouve l'erreur relative sur la masse pour<br />l'ensemble du calcul.<br />Il ne s'agit que d'un calcul indicatif car il n'existe pas<br />d'expression compatible du debit en formulation c,u,v.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>BORNES EN TEMPS POUR L'ANALYSE DE FOURIER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour le calcul du marnage et de la phase de la maree</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.;0.</dd>
+    
+    </dl>
+    
+    <h2>BRECHE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte de breches dans le calcul par<br />modification altimetrique dans le maillage. La description<br />des breches se fait avec le fichier de donnees des breches.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CALCUL COMPATIBLE DES FLUX</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>FLUX A TRAVERS LES SECTIONS DE CONTROLE, CALCUL COMPATIBLE<br />AVEC L'IMPERMEABILITE SOUS FORME FAIBLE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CLIPPING DE H</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine si l'on desire ou non limiter par valeur inferieure<br />la hauteur d'eau H (dans le cas des bancs decouvrants par exemple).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT 1 DE LA LOI DE DEGRADATION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient 1 de la loi de decroissance des traceurs</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT D'IMPLICITATION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient d'implicitation du traceur</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.6</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT D'INFLUENCE DU VENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient d'entrainement du vent (cf.<br />Note de principe).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT D'INTEGRATION EN TEMPS DE NEWMARK</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1. : Euler explicite 0.5 : ordre 2 en temps</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE CALAGE DES VITESSES DE COURANT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient pour ajuster les composantes de vitesse<br />de l'onde de maree aux frontieres maritimes.<br />La valeur par defaut 999999. signifie que c'est la racine carree<br />du COEFFICIENT DE CALAGE DU MARNAGE qui est prise</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>999999.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE CALAGE DU MARNAGE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient pour ajuster le marnage de l'onde de maree<br />aux frontieres maritimes</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE CALAGE DU NIVEAU DE MER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient pour ajuster le niveau de mer</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE CORIOLIS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient de la force de Coriolis.<br />Celui-ci doit etre calcule en fonction de la latitude l par la formule<br />FCOR = 2w sin(l) , w etant la vitesse de rotation de la terre.<br />w = 7.27 10-5 rad/s<br />Les composantes de la force de Coriolis sont alors :<br />FU =   FCOR x V<br />FV = - FCOR x U</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient de diffusion du traceur.<br />L'influence de ce parametre sur l'evolution du traceur dans<br />le temps est importante.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-6</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE DIFFUSION DES VITESSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe de facon uniforme pour l'ensemble du domaine;<br />la valeur du coefficient de diffusion de viscosite globale (dynamique +<br />turbulente). Cette valeur peut avoir une influence non negligeable sur<br />la forme et la taille des recirculations.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-6</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE DISSIPATION POUR COURANTS SECONDAIRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient de dissipation de Omega</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>5.E-1</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient de frottement pour la<br />formulation choisie.<br />Attention; la signification de ce chiffre varie suivant la formule<br />choisie :<br />1 : coefficient lineaire<br />2 : coefficient de Chezy<br />3 : coefficient de Strickler<br />4 : coefficient de Manning<br />5 : hauteur de rugosite de Nikuradse</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>50.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE PRODUCTION POUR COURANTS SECONDAIRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Une constante dans les termes de creation de Omega</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>7.071</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENT DE RUGOSITE DES BORDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient de frottement sur les frontieres<br />solides avec un regime turbulent rugueux sur les bords du domaine.<br />meme convention que pour le coefficient de frottement:<br />1 : non programme<br />2 : coefficient de Chezy<br />3 : coefficient de Strickler<br />4 : coefficient de Manning<br />5 : hauteur de rugosite de Nikuradse</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>100.</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENTS ADIMENSIONNELS DE DISPERSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>coefficients longitudinal et transversal dans la formule de<br />Elder. Utilises uniquement avec le modele de turbulence 2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>6. ; 0.6</dd>
+    
+    </dl>
+    
+    <h2>COEFFICIENTS DE DECENTREMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficients utilises par la methode S.U.P.G.<br />ces coefficients sont respectivement appliques a<br />1) U et V<br />2) H ou C<br />3) T<br />4) K ET EPSILON</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.;1.;1.;1</dd>
+    
+    </dl>
+    
+    <h2>COMPATIBILITE DU GRADIENT DE SURFACE LIBRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Des valeurs inferieures a 1 suppriment les oscillations<br />parasites</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>CONDITIONS INITIALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de definir les conditions initiales sur<br />les hauteurs d'eau.<br />Les valeurs possibles sont :<br />- COTE NULLE. Initialise la cote de surface libre a 0.<br />Les hauteurs d'eau initiales sont alors retrouvees en<br />faisant la difference entre les cotes de surface libre<br />et du fond.<br />- COTE CONSTANTE .Initialise la cote de surface libre a la<br />valeur donnee par le mot-cle COTE INITIALE. Les hauteurs<br />d'eau initiales sont calculees comme precedemment.<br />- HAUTEUR NULLE .Initialise les hauteurs d'eau a 0.<br />- HAUTEUR CONSTANTE. Initialise les hauteurs d'eau a la valeur<br />donnee par le mot-cle HAUTEUR INITIALE.<br />- PARTICULIERES. Les conditions initiales sur la hauteur d'eau<br />doivent etre precisees dans le sous-programme CONDIN.<br />- ALTIMETRIE SATELLITE TPXO. Les conditions initiales sur la hauteur<br />d'eau et les vitesses sont etiblies sur la base des donnees<br />satellite TPXO dont les 8 premiers constistuents ont ete extrait<br />et sauves dans le fichier BASE DE DONNEES DE MAREE.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>COTE NULLE</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>"COTE NULLE"'; '"COTE CONSTANTE"';<br />'"HAUTEUR NULLE"'; '"HAUTEUR CONSTANTE"'; '"PARTICULIERES"' ;<br />'"ALTIMETRIE SATELLITE TPXO"</dd>
+    
+    </dl>
+    
+    <h2>CONTROLE DES LIMITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>UTILISER AVEC LE MOT-CLE : VALEURS LIMITES, LE PROGRAMME<br />S'ARRETE SI LES LIMITES SUR U,V,H OU T SONT DEPASSEES</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CONVECTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non des termes de convection.<br />En cas de reponse positive;<br />on peut encore supprimer certains termes de convection avec<br />les mots-cles CONVECTION DE ...</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>CONVECTION DE H</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de la convection de H.<br />Il s'agit en fait dans la version 2.0 de la convection de C</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>CONVECTION DE K ET EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de la convection de k et epsilon.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>CONVECTION DE U ET V</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de la convection de U et V.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>CONVECTION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de la convection du traceur passif.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>COORDONNEES DE L'ORIGINE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur en metres, utilise pour eviter les trops grands nombres, transmis<br />dans le format Selafin mais pas d'autre traitement pour l'instant</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0</dd>
+    
+    </dl>
+    
+    <h2>COORDONNEES SPHERIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Choix des coordonnees spheriques pour la realisation du calcul<br />( pour les grands domaines de calcul).<br />Attention : cette option est etroitement liee au maillage qui doit avoir<br />ete saisi sur une carte marine en projection de Mercator.<br />Il faut de plus relever sur la carte la LATITUDE DU POINT ORIGINE<br />(autre mot-cle) qui correspond dans le maillage a l'ordonnee y = 0.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CORIOLIS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de la force de Coriolis.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CORRECTION DE CONTINUITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Corrige les vitesses sur les points avec hauteur imposee ou<br />l'equation de continuite n'a pas ete resolue</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>COTE INITIALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />CONDITIONS INITIALES - COTE CONSTANTE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>COTES IMPOSEES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des cotes imposees aux frontieres liquides entrantes.<br />Lire la partie du mode d'emploi consacree aux conditions aux limites</dd>
+    
+    </dl>
+    
+    <h2>COUPLAGE AVEC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Liste des codes avec lesquels on couple Telemac-2D<br />SISYPHE : couplage interne avec Sisyphe<br />TOMAWAC : couplage interne avec Tomawac<br />DELWAQ : sortie de fichiers de resultats pour Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>"SISYPHE"';'"TOMAWAC"';'"DELWAQ"</dd>
+    
+    </dl>
+    
+    <h2>COURANTS DE HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Active la prise en compte des courants de houle</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>COURANTS SECONDAIRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour prendre en compte les courants secondaires</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>COURBES DE TARAGE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Indique si une courbe de tarage doit etre utilisee<br />pour une frontiere 0:non 1:Z(Q) 2: Q(Z) (2 non programme)</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0</dd>
+    
+    </dl>
+    
+    <h2>CRITERES D'ARRET</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Criteres d'arret pour un ecoulement permanent<br />ces coefficients sont respectivement appliques a<br />1) U et V<br />2) H<br />3) T<br />A utiliser avec le mot-cle : ARRET SI UN ETAT PERMANENT EST ATTEINT</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-4;1.E-4;1.E-4</dd>
+    
+    </dl>
+    
+    <h2>DATE DE L'ORIGINE DES TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de fixer la date d'origine des temps du modele lors<br />de la prise en compte de la force generatrice de la maree.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1900;1;1</dd>
+    
+    </dl>
+    
+    <h2>DEBITS DES SOURCES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des debits des sources.</dd>
+    
+    </dl>
+    
+    <h2>DEBITS IMPOSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des debits imposes aux frontieres liquides entrantes.<br />Lire la partie du mode d'emploi consacree aux conditions aux limites</dd>
+    
+    </dl>
+    
+    <h2>DEBUGGER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour imprimer la sequence des appels, mettre 1</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>DEFINITION DE ZONES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Declenche l'appel a def_zones, pour donner<br />un numero de zone a chaque point</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DESCRIPTION DES LIBRAIRIES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Description des librairies de T2D</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|lib|telemac2dMMMVVV.LLL';<br />'builds|PPP|lib|sisypheMMMVVV.LLL';<br />'builds|PPP|lib|tomawacMMMVVV.LLL';<br />'builds|PPP|lib|dredgesimMMMVVV.LLL';<br />'builds|PPP|lib|biefMMMVVV.LLL';<br />'builds|PPP|lib|damoMMMVVV.LLL';<br />'builds|PPP|lib|parallelMMMVVV.LLL';<br />'builds|PPP|lib|specialMMMVVV.LLL</dd>
+    
+    </dl>
+    
+    <h2>DESTINATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom eventuel d'une station de travail sur laquelle<br />l'utilisateur desire rediriger le fichier des resultats du calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>CHE43A</dd>
+    
+    </dl>
+    
+    <h2>DIAMETRE DES ALGUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Diametre des algues en m</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.1</dd>
+    
+    </dl>
+    
+    <h2>DIAMETRE DES ELEMENTS DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>diametre des elements de frottements</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.006</dd>
+    
+    </dl>
+    
+    <h2>DICTIONNAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Dictionnaire des mots cles.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>telemac2d.dico</dd>
+    
+    </dl>
+    
+    <h2>DICTIONNAIRE WAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>fichier des parametres physiques pour les<br />processus de qualite d eau (internes non ceux de DELWAQ)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de la diffusion du traceur passif.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>DIFFUSION DES VITESSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de decider si l'on prend ou non en compte la diffusion<br />des vitesses.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>DIFFUSION POUR DELWAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Decide de la sortie du coefficient de diffusion pour Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DISCRETISATIONS EN ESPACE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Choix de la discretisation pour chaque variable<br />ces coefficients sont respectivement appliques a<br />1) U et V     2) H      3) T     4) K ET EPSILON (NON PROGRAMME)<br />11 : lineaire<br />12 : quasi-bulle<br />13 : quadratique</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>11;11;11;11</dd>
+    
+    </dl>
+    
+    <h2>DONNEES POUR LE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Lois de frottements definies par zone</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DOSSIER DE COUPLAGE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom complet du dossier d echange des fichiers<br />pour couplage de codes</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>DUREE DU CALCUL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>duree de la simulation. alternative au parametre nombre de pas<br />de temps. On en deduit le nombre de pas de temps en prenant l'entier le<br />plus proche de (duree du calcul/pas de temps). Si le nombre de pas de<br />temps est aussi donne, on prend la plus grande valeur</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>EFFETS DE DENSITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>PRISE EN COMPTE DU GRADIENT HORIZONTAL DE DENSITE<br />LE TRACEUR EST ALORS LA SALINITE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>ELEMENTS MASQUES PAR L'UTILISATEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>SI OUI REMPLIR LE SOUS-PROGRAMME MASKOB</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>ENREGISTREMENT POUR SUITE DE CALCUL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>En cas de suite de calcul, numero de l'enregistrement<br />de depart dans le fichier du calcul precedent. 0 signifie<br />qu'on prend le dernier enregistrement</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>ENTIER LIBRE 17</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>ENTIER LIBRE 18</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>ENTIER LIBRE 20</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>EPAISSEUR DES ALGUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Epaisseur des algues en m</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.01</dd>
+    
+    </dl>
+    
+    <h2>EQUATIONS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>CHOIX DES EQUATIONS A RESOUDRE : SAINT-VENANT ELEMENTS FINIS,<br />SAINT-VENANT VOLUMES FINIS OU BOUSSINESQ   20 CARACTERES</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SAINT-VENANT EF</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>"SAINT-VENANT EF"';'"SAINT-VENANT VF"';'"BOUSSINESQ"</dd>
+    
+    </dl>
+    
+    <h2>ESPACEMENT DES ELEMENTS DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>espacement des elements de frottement</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.14</dd>
+    
+    </dl>
+    
+    <h2>ESTIMATION DE PARAMETRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Liste des parametres a estimer, choix : FROTTEMENT<br />ou FROTTEMENT, PERMANENT</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>"FROTTEMENT"';'"FROTTEMENT, PERMANENT"</dd>
+    
+    </dl>
+    
+    <h2>EXECUTABLE PAR DEFAUT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Executable par defaut de T2D</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|bin|telemac2dMMMVVV.exe</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE COMMANDE DELWAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE COMMANDES HYDROCARBURES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Contient les donnees pour le modele de derive de nappes</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES BINAIRE 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees code en binaire mis a la disposition<br />de l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 24.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES BINAIRE 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees code en binaire mis a la disposition<br />de l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 25.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES DES BRECHES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de description des breches</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES DES BUSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de description des buses/ponts presents dans le modele</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES DES SEUILS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de description des seuils presents dans le modele</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES DES SIPHONS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de description des siphons presents dans le modele</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES FORMATE 1</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees formate mis a la disposition de<br />l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 26.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES FORMATE 2</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de donnees formate mis a la disposition de<br />l'utilisateur.<br />Les donnees de ce fichier seront a lire sur le canal 27.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE DONNEES POUR LE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>fichier de donnees pour le frottement</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant le maillage du calcul a realiser.</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats de reference pour la validation. Les resultats a placer dans ce fichier seront a<br />ecrire sur le canal 22.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE RESULTATS BINAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats code en binaire mis a la disposition<br />de l'utilisateur. Les resultats a placer dans ce fichier seront a<br />ecrire sur le canal 28.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE RESULTATS FORMATE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats formate mis a la disposition de<br />l'utilisateur.<br />Les resultats a placer dans ce fichier seront a ecrire sur<br />le canal 29.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE SORTIE DES SECTIONS DE CONTROLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>sections output file, written by the master</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DE LA DIFFUSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DE LA SALINITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DE LA TEMPERATURE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DE LA VITESSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DES DISTANCES ENTRE NOEUDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DES ECHANGES ENTRE NOEUDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DES FLUX VERTICAUX</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DES SURFACES DE FLUX</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DES SURFACES DU FOND</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DELWAQ DES VOLUMES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultats pour le couplage avec Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES CONDITIONS AUX LIMITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les types de conditions aux limites.<br />Ce fichier est rempli de facon automatique par le mailleur au moyen de<br />couleurs affectees aux noeuds des frontieres du domaine de calcul.</dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES CONSTANTES HARMONIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Constantes harmoniques extraites du fichier du modele de maree</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES COURBES DE TARAGE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les courbes de tarage</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES FLOTTEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de resultat avec les positions des flotteurs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES FONDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier eventuel contenant la bathymetrie associee au<br />maillage.<br />Si ce mot-cle est utilise; c'est cette bathymetrie qui sera utilisee<br />pour le calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES FRONTIERES LIQUIDES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de variations en temps des conditions aux limites.<br />Les donnees de ce fichier seront a lire sur le canal 12.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les parametres du calcul a realiser.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES DE SISYPHE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier des parametres de Sisyphe en cas de couplage interne</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES DE TOMAWAC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier des parametres de Tomawac en cas de couplage interne</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES WAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>fichier des parametres physiques pour les<br />processus de qualite d eau (internes non ceux de DELWAQ)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier dans lequel seront ecrits les resultats du calcul<br />avec la periodicite donnee par le mot cle 'PERIODE POUR LES SORTIES<br />GRAPHIQUES'.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES SECTIONS DE CONTROLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>sections input file, partitioned</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES SOURCES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier contenant les informations variables<br />en temps des sources</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES ZONES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier des zones avec sur chaque ligne<br />numero de point  numero de zone</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DU CALCUL PRECEDENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom d'un fichier contenant les resultats d'un calcul precedent<br />realise sur le meme maillage et dont le dernier pas de temps enregistre<br />va fournir les conditions initiales pour une suite de de calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DU MODELE DE MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fichier de geometrie du modele dont sont extraites<br />les constantes harmoniques</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER FORTRAN</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier FORTRAN a soumettre.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>DEFAUT</dd>
+    
+    </dl>
+    
+    <h2>FONCTION COUT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : calculee sur h, u , v  2 : calculee avec c, u , v</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>FORCE GENERATRICE DE LA MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Active la prise en compte de la force generatrice de la maree</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE GEOMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de geometrie.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE REFERENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DES RESULTATS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DU CALCUL PRECEDENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Format du fichier de resultats du calcul precedent.<br />Les valeurs possibles sont :<br />- SERAFIN : format standard simple precision pour Telemac;<br />- SERAFIND: format standard double precision pour Telemac;<br />- MED     : format MED base sur HDF5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SERAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SERAFIN ';'SERAFIND';'MED</dd>
+    
+    </dl>
+    
+    <h2>FORME DE LA CONVECTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Choix du schema de convection pour chaque variable<br />ces coefficients sont respectivement appliques a<br />1) U et V     2) H     3) T     4) K ET EPSILON<br />1 : caracteristiques sur h<br />2 : SUPG<br />3 : Schema N conservatif<br />4 : Schema N conservatif<br />5 : Schema PSI conservatif<br />6 : Schema PSI non conservatif<br />7 : schema N implicite non conservatif<br />13 : Schema N par segment<br />14 : Schema N par segment<br />Second integer must be 5</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1;5;1;1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1="CARACTERISTIQUES"';<br />'2="SUPG"';<br />'3="SCHEMA N CONSERVATIF"' ;<br />'4="SCHEMA N CONSERVATIF"' ;<br />'5="SCHEMA PSI CONSERVATIF"';<br />'6="SCHEMA PSI NON CONSERVATIF"';<br />'7="SCHEMA N IMPLICITE NON CONSERVATIF"';<br />'13="SCHEMA N PAR SEGMENTS"';<br />'14="SCHEMA N PAR SEGMENTS"'</dd>
+    
+    </dl>
+    
+    <h2>FROTTEMENT POUR LA VEGETATION NON SUBMERGEE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>calcul du frottement du a la vegetation non submergee</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>HAUTEUR DANS LES TERMES DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : nodale 2 : moyenne</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>HAUTEUR INITIALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeur utilisee avec l'option :<br />CONDITIONS INITIALES :-HAUTEUR CONSTANTE-</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>HEURE DE L'ORIGINE DES TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de fixer l'heure d'origine des temps du modele lors<br />de la prise en compte de la force generatrice de la maree.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0</dd>
+    
+    </dl>
+    
+    <h2>IMPLICITATION POUR LA DIFFUSION DES VITESSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient d'implicitation sur les termes de<br />diffusion des vitesses</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>IMPLICITATION POUR LA HAUTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient d'implicitation sur C dans<br />l'etape de propagation (cf.  Note de principe).<br />Les valeurs inferieures a 0.5 donnent un schema instable.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.55</dd>
+    
+    </dl>
+    
+    <h2>IMPLICITATION POUR LA VITESSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur du coefficient d'implicitation sur la vitesse<br />dans l'etape de propagation (cf.  Note de principe).<br />Les valeurs inferieures a 0.5 donnent un schema instable.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.55</dd>
+    
+    </dl>
+    
+    <h2>IMPRESSION DU CUMUL DES FLUX</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>IMPRESSION DU FLUX CUMULE A TRAVERS LES SECTIONS DE CONTROLE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>INFORMATIONS SUR LE MODELE K-EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne le nombre d'iterations du solveur de l'etape de<br />diffusion et termes sources du modele k-epsilon.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>INFORMATIONS SUR LE SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne a chaque pas de temps le nombre d'iterations necessaires<br />a la convergence du solveur de l'etape de propagation.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>INTERPOLATION DE COMPOSANTES MINEURES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour la base de donnees TPXO uniquement.<br />Interpolation de composantes harmoniques mineures<br />a partir de celles lues dans les fichiers d'entree<br />lies aux mots-cles BASE BINAIRE 1 DE DONNEES DE MAREE<br />et BASE BINAIRE 2 DE DONNEES DE MAREE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>LANGUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : FRANCAIS   2 : ANGLAIS</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>LATITUDE DU POINT ORIGINE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine l'origine utilisee pour le calcul de latitudes<br />lorsque l'on effectue un calcul en coordonnees spheriques.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>48.</dd>
+    
+    </dl>
+    
+    <h2>LISSAGES DU FOND</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de lissages effectues sur la topographie.<br />chaque lissage, effectue a l'aide d'une matrice de masse,<br />est conservatif.<br />Utilise lorsque les donnees de bathymetrie donnent des resultats<br />trop irreguliers apres interpolation.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>LISTE DE POINTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Liste de points remarquables pour les impressions</dd>
+    
+    </dl>
+    
+    <h2>LISTE DES FICHIERS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms des fichiers exploites par le code</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>FICHIER DES PARAMETRES';<br />'DICTIONNAIRE';<br />'FICHIER FORTRAN';<br />'FICHIER DE GEOMETRIE';<br />'FICHIER DES CONDITIONS AUX LIMITES';<br />'FICHIER DES RESULTATS';<br />'FICHIER DU CALCUL PRECEDENT';<br />'FICHIER DES FONDS';<br />'FICHIER DE DONNEES BINAIRE 1';<br />'FICHIER DE DONNEES BINAIRE 2';<br />'FICHIER DE DONNEES FORMATE 1';<br />'FICHIER DE DONNEES FORMATE 2';<br />'FICHIER DE RESULTATS BINAIRE';<br />'FICHIER DE RESULTATS FORMATE';<br />'FICHIER DE REFERENCE';<br />'FICHIER DES FRONTIERES LIQUIDES';<br />'FICHIER DE DONNEES POUR LE FROTTEMENT';<br />'FICHIER DELWAQ DES VOLUMES';<br />'FICHIER DELWAQ DES SURFACES DE FLUX';<br />'FICHIER DELWAQ DES FLUX VERTICAUX';<br />'FICHIER DELWAQ DE LA SALINITE';<br />'FICHIER DELWAQ DES SURFACES DU FOND';<br />'FICHIER DELWAQ DES ECHANGES ENTRE NOEUDS';<br />'FICHIER DELWAQ DES DISTANCES ENTRE NOEUDS';<br />'FICHIER DELWAQ DE LA TEMPERATURE';<br />'FICHIER DELWAQ DE LA VITESSE';<br />'FICHIER DELWAQ DE LA DIFFUSION';<br />'FICHIER DE COMMANDE DELWAQ';<br />'FICHIER DES COURBES DE TARAGE';<br />'FICHIER DES SOURCES';<br />'FICHIER DES SECTIONS DE CONTROLE';<br />'FICHIER DE SORTIE DES SECTIONS DE CONTROLE';<br />'FICHIER DE COMMANDES HYDROCARBURES';<br />'FICHIER DES CONSTANTES HARMONIQUES';<br />'FICHIER DU MODELE DE MAREE';<br />'BASE ASCII DE DONNEES DE MAREE';<br />'BASE BINAIRE 1 DE DONNEES DE MAREE';<br />'BASE BINAIRE 2 DE DONNEES DE MAREE';<br />'FICHIER DE DONNEES DES SEUILS';<br />'FICHIER DE DONNEES DES SIPHONS';<br />'FICHIER DE DONNEES DES BUSES';<br />'FICHIER DE DONNEES DES BRECHES';<br />'FICHIER DES FLOTTEURS';<br />'FICHIER DES ZONES';<br />'FICHIER DES PARAMETRES WAQ';<br />'DICTIONNAIRE WAQ</dd>
+    
+    </dl>
+    
+    <h2>LOI DE DEGRADATION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte d'une loi de decroissance des traceurs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0="PAS DE DEGRADATION"';<br />'1="LOI EN F(T90)"'</dd>
+    
+    </dl>
+    
+    <h2>LOI DE FROTTEMENT SUR LE FOND</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>selectionne le type de formulation utilisee pour le calcul<br />du frottement sur le fond.<br />Les lois possibles sont les suivantes (cf.<br />Note de principe) : - 0 : pas de frottement sur le fond;<br />1 : formule de Haaland<br />2 : formule de Chezy<br />3 : formule de STRICKLER<br />4 : formule de MANNING<br />5 : formule de NIKURADSE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>0<br />'1="HAALAND"';<br />'2="CHEZY"';<br />'3="STRICKLER"';<br />'4="MANNING"';<br />'5="NIKURADSE"</dd>
+    
+    </dl>
+    
+    <h2>LOI DE FROTTEMENT SUR LES PAROIS LATERALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>selectionne le type de formulation utilisee pour le calcul<br />du frottement sur les parois laterales.<br />Les lois possibles sont les suivantes (cf. Note de principe) :<br />0 : pas de frottement<br />1 : lineaire<br />2 : Chezy<br />3 : Strickler<br />4 : Manning<br />5 : formule de NIKURADSE<br />6 : loi en log<br />7 : Colebrook-White</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>0<br />'1="HAALAND"';<br />'2="CHEZY"';<br />'3="STRICKLER"';<br />'4="MANNING"';<br />'5="NIKURADSE"';<br />'6="LOG LAW"';<br />'7="COLEBROOK-WHITE"</dd>
+    
+    </dl>
+    
+    <h2>LONGITUDE DU POINT ORIGINE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de la longitude du point origine du modele,<br />lors de l'utilisation de la force generatrice de la maree.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>LONGUEUR DU VECTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>LONGUEUR DU VECTEUR POUR LES MACHINES VECTORIELLES</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>MASS-LUMPING POUR LES CARACTERISTIQUES FAIBLES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Applique a la matrice de masse</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>MASS-LUMPING SUR H</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>TELEMAC offre la possibilite d'effectuer du mass-lumping<br />sur H ou U.<br />Ceci revient a ramener tout ou partie (suivant la valeur de ce<br />coefficient) des matrices AM1 (h) ou AM2 (U) et AM3 (V) sur<br />leur diagonale.<br />Cette technique permet d'accelerer le code dans des proportions tres<br />importantes et de le rendre egalement beaucoup plus stable. Cependant<br />les solutions obtenues se trouvent lissees.<br />Ce parametre fixe le taux de mass-lumping effectue sur h.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>MASS-LUMPING SUR LA VITESSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe le taux de mass-lumping effectue sur la vitesse.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>MASS-LUMPING SUR LES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe le taux de mass-lumping effectue sur le traceur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>MASSE VOLUMIQUE DE L'EAU</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur de la masse volumique de l'eau.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1000.</dd>
+    
+    </dl>
+    
+    <h2>MASSE VOLUMIQUE DES ALGUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Masse volumique des algues en kg/m3</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1050.</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR K ET EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe le nombre maximum d'iterations accepte lors de la<br />resolution du systeme diffusion-termes sources du modele k-epsilon.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>50</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR L'IDENTIFICATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>chaque iteration comprend au moins un<br />calcul direct et un calcul adjoint</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>20</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR LA DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Limite le nombre d'iterations du solveur a chaque pas<br />de temps pour le calcul de la diffusion du traceur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>60</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR LE SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Les algorithmes utilises pour la resolution de l'etape de<br />propagation etant iteratifs; il est necessaire de limiter le nombre<br />d'iterations autorisees.<br />Remarque : un maximum de 40 iterations par pas de temps semble<br />raisonnable.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>100</dd>
+    
+    </dl>
+    
+    <h2>MAXIMUM D'ITERATIONS POUR LES SCHEMAS DE CONVECTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Seulement pour schemes 13 et 14</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+    <h2>METHODE D'IDENTIFICATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>0 : plan d'experience 1 : gradient simple<br />2 : gradient conj. 3 : interp. de Lagrange</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>0<br />'1="gradient simple"';<br />'2="gradient conj"';<br />'3="interp. de Lagrange"</dd>
+    
+    </dl>
+    
+    <h2>MODELE DE DIFFUSION STOCHASTIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour les particules : flotteurs, algues, hydrocarbures</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0</dd>
+    
+    </dl>
+    
+    <h2>MODELE DE NAPPES D'HYDROCARBURES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>POUR DECLENCHER LE MODELE DE DERIVE DE NAPPES, DANS<br />CE CAS LE FICHIER DE COMMANDES MIGRHYCAR EST NECESSAIRE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>MODELE DE TRANSPORT DES ALGUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si oui, les flotteurs seront des algues</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>MODELE DE TURBULENCE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>3 choix sont possibles actuellement : viscosite constante (1)<br />modele de Elder (2) ou modele k-epsilon (3).<br />Attention : si on choisit l'option 1<br />il ne faut pas oublier d'ajuster la valeur du mot-cle COEFFICIENT DE<br />DIFFUSION DES VITESSES.<br />si on choisit l'option 2<br />il ne faut pas oublier d'ajuster les deux valeurs du mot-cle :<br />COEFFICIENTS ADIMENSIONNELS DE DISPERSION<br />Si on choisit l'option 3;<br />ce meme parametre doit retrouver sa vraie valeur physique car elle est<br />utilisee comme telle dans le modele de turbulence</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />;'4="SMAGORINSKI"</dd>
+    
+    </dl>
+    
+    <h2>MOT DE PASSE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Mot de passe associe a l'USER CRAY.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>NOM DU CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>clcraya</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE BUSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de buses ou ponts traites comme des termes sources ou<br />puits. Ces buses doivent etre decrits comme des sources dans le<br />fichier cas. Leurs caracteristiques sont donnees dans le<br />fichier de donnees des buses (voir la documentation ecrite)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE COURANT SOUHAITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de Courant souhaite en cas de pas de temps variable</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE DERIVES LAGRANGIENNES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet d'effectuer simultanement plusieurs calculs de derives<br />lagrangiennes initiees a des pas differents</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE FLOTTEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet d'effectuer un suivi de flotteurs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE PAS DE TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le nombre de pas de temps effectues lors de<br />l'execution du code.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE POINTS DE GAUSS POUR LES CARACTERISTIQUES FAIBLES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Voir les release notes 6.3</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE SEUILS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de seuils qui seront traites par des conditions aux<br />limites. Ces seuils doivent etre decrits comme des frontieres du<br />domaine de calcul, et leurs caracteristiques sont donnees dans le<br />fichier de donnees des seuils (voir la documentation ecrite)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE SIPHONS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de siphons traites comme des termes sources ou<br />puits. Ces siphons doivent etre decrits comme des sources dans le<br />fichier cas. Leurs caracteristiques sont donnees dans le<br />fichier de donnees des siphons (voir la documentation ecrite)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE SOUS-ITERATIONS POUR LES NON-LINEARITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de reactualiser, pour un meme pas de temps, les champs<br />convecteur et propagateur au cours de plusieurs sous-iterations. A la<br />premiere sous-iteration, ces champs sont donnes par C et le champ de<br />vitesses au pas de temps precedent. Aux iterations suivantes, ils sont<br />pris egaux au champ de vitesse obtenu a la fin de la sous-iteration<br />precedente. Cette technique permet d'ameliorer la prise en compte des<br />non linearites.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE TABLEAUX PRIVES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de tableaux mis a disposition de l utilisateur</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le nombre de traceurs.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE MAXIMUM DE DOMAINES DE FROTTEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>nombre maximal de zones pouvant etre definies pour le<br />frottement. Peut etre augmente si necessaire</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+    <h2>NOMS DES POINTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms des points remarquables pour les impressions</dd>
+    
+    </dl>
+    
+    <h2>NOMS DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms des traceurs en 32 caracteres, 16 pour le nom<br />16 pour l'unite</dd>
+    
+    </dl>
+    
+    <h2>NOMS DES VARIABLES CLANDESTINES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms de variables qui ne sont pas utilisees par TELEMAC;<br />mais qui doivent etre conservees lors de son execution.<br />Ceci peut etre utilise entre autres lors du couplage de TELEMAC<br />avec un autre code.<br />Les variables clandestines sont alors des variables propres a l'autre<br />code et sont rendues dans le fichier de resultats.</dd>
+    
+    </dl>
+    
+    <h2>NORD</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Direction du nord en degres, par rapport a l'axe des y<br />dans le sens trigonometrique. Notation decimale 10.5 signifie  10 degres<br />et trente minutes.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE COMPTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Numero du compte calcul sur lequel sera impute le cout<br />du calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE FUSEAU OU PROJECTION DANS LE SYSTEME GEOGRAPHIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Numero de zone (fuseau ou type de projection)<br />lors de l'utilisation d'une projection plane.<br />Indiquer le systeme geographique dans lequel est construit le modele numerique<br />avec le mot-cle SYSTEME GEOGRAPHIQUE</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>-1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'-1="PAS DE VALEUR PAR DEFAUT. CHOISIR LE NUMERO PARMI LES CHOIX POSSIBLES"';<br />'1="LAMBERT 1 NORD"';<br />'2="LAMBERT 2 CENTRE"';<br />'3="LAMBERT 3 SUD"';<br />'4="LAMBERT 4 CORSE"';<br />'22="LAMBERT 2 ETENDU"';<br />'30="ZONE UTM, PAR EXEMPLE"'</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE L'ENREGISTREMENT DANS LE FICHIER DE HOULE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Numero d enregistrement dans le fichier des courants de houle</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE VERSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Numero de version des bibliotheques utilisees par TELEMAC.<br />SUR UNE STATION DE TRAVAIL<br />5 versions sont donnees correspondant a :<br />TELEMAC,DAMO,UTILE,BIEF,HP</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>V7P0</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DU PREMIER PAS DE TEMPS POUR LES SORTIES GRAPHIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine le nombre de pas de temps a partir duquel debute<br />l'ecriture des resultats dans le 'FICHIER DES RESULTATS'.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DU PREMIER PAS DE TEMPS POUR LES SORTIES LISTING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine le nombre de pas de temps a partir duquel debute<br />l'ecriture des resultats dans le listing.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>OPTION DE PROPAGATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Non active pour l'instant.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    </dl>
+    
+    <h2>OPTION DE SUPG</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>0:pas de decentrement SUPG  1:SUPG classique   2:SUPG modifiee<br />ces coefficients sont respectivement appliques a<br />1) U et V     2) H      3) T     4) K ET EPSILON</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2;2;2;2</dd>
+    
+    </dl>
+    
+    <h2>OPTION DE TRAITEMENT DES BANCS DECOUVRANTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise si BANCS DECOUVRANTS est vrai<br />1 : EQUATIONS RESOLUES PARTOUT AVEC CORRECTION SUR LES BANCS DECOUVRANTS<br />2 : GEL DES ELEMENTS DECOUVRANTS<br />3 : COMME 1 MAIS AVEC POROSITE (METHODE DEFINA)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SCHEMA POUR LA CONVECTION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si present remplace et a priorite sur :<br />OPTION POUR LES CARACTERISTIQUES<br />OPTION DE SUPG<br />Si schema PSI : 1=explicite 2=predicteur-correcteur<br />pour les traceurs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SCHEMA POUR LA CONVECTION DES VITESSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si present remplace et a priorite sur :<br />OPTION POUR LES CARACTERISTIQUES<br />OPTION DE SUPG<br />Si schema PSI : 1=explicite 2=predicteur-correcteur<br />pour les traceurs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SCHEMA POUR LA CONVECTION DU K-EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si present remplace et a priorite sur :<br />OPTION POUR LES CARACTERISTIQUES<br />OPTION DE SUPG<br />Si schema PSI : 1=explicite 2=predicteur-correcteur<br />pour k et epsilon</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SCHEMA PSI</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1: explicite 2: predicteur-correcteur</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>si le solveur est GMRES (7) le mot cle est la dimension de<br />l'espace de KRYLOV (valeurs conseillees entre 2 et 15)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SOLVEUR POUR LA DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>si le solveur est GMRES (7) le mot cle est la dimension de<br />l'espace de KRILOV (valeurs conseillees entre 2 et 15)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU SOLVEUR POUR LE MODELE K-EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>si le solveur est GMRES (7) le mot cle est la dimension de<br />l'espace de KRILOV (valeurs conseillees entre 2 et 15)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    </dl>
+    
+    <h2>OPTION DU VENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>donne les options pour introduire le vent:<br />0: pas de vent (enleve le mot cle VENT (logique))<br />1: constant en temps et en espace (donne par le mot cle<br />VITESSE ET DIRECTION DU VENT)<br />2: variable en temps donne par fichier formate<br />3: variable en temps et en espace donne par fichier formate</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LA DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1: Diffusion de la forme div( nu grad(T) )<br />2: Diffusion de la forme 1/h div ( h nu grad(T) )</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="1/h div ( h nu grad(T)"</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LA DIFFUSION DES VITESSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1: Diffusion de la forme div( nu grad(U) )<br />2: Diffusion de la forme 1/h div ( h nu grad(U) )</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="1/h div ( h nu grad(U)"</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LA GENERATION DE TSUNAMI</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0="Pas de Tsunami"';<br />'1="Generation d'un Tsunami sur la base du modele de Okada 1992"'</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LES CARACTERISTIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1: forme forte 2: forme faible</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LES CONDITIONS AUX LIMITES DE MAREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Option pour les conditions aux limites de maree.<br />Pour des marees reelles, l option 1 est recommandee.<br />Calage possible par les mots-cles COEFFICIENT POUR CALAGE EN MARNAGE<br />et COEFFICIENT POUR CALAGE EN NIVEAU.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0="Pas de maree"';<br />'1="Maree reelle (methodologie recommandee)"';<br />'2="Maree de vive-eau exceptionnelle (coef. presque 120)"';<br />'3="Maree de vive-eau moyenne (coef. presque 95)"';<br />'4="Maree moyenne (coef. presque 70)"';<br />'5="Maree de morte-eau moyenne (coef. presque 45)"';<br />'6="Maree de morte-eau exceptionnelle (coef. presque 20)"';<br />'7="Maree reelle (methodologie d avant 2010)"'</dd>
+    
+    </dl>
+    
+    <h2>OPTION POUR LES FRONTIERES LIQUIDES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>On donne 1 entier par frontiere liquide<br />1 : conditions aux limites classiques<br />2 : methode de Thompson avec calcul de caracteristiques</dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOURCES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des ordonnees des sources de debit et de traceur.</dd>
+    
+    </dl>
+    
+    <h2>ORDRE DU TIR INITIAL POUR H</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Tir initial du solveur de l'etape de propagation.<br />Offre la possibilite de modifier la valeur initiale de DH,<br />accroissement de H, a chaque iteration,<br />dans l'etape de propagation en utilisant les valeurs<br />finales de cette variable aux pas de temps precedents. Ceci peut<br />permettre d'accelerer la vitesse de convergence lors de la resolution<br />du systeme. Trois possibilites sont offertes :<br />0 : DH = 0.<br />1 : DH = DHn (valeur finale de DH au pas de temps precedent),<br />2 : DH = 2DHn - DHn-1 (extrapolation).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'0=zero';<br />'2=extrapolation</dd>
+    
+    </dl>
+    
+    <h2>ORDRE DU TIR INITIAL POUR U</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Tir initial du solveur de l'etape de propagation.<br />Offre la possibilite de modifier la valeur initiale de U, a chaque<br />iteration, dans l'etape de propagation en utilisant les valeurs<br />finales de cette variable aux pas de temps precedents. Ceci peut<br />permettre d'accelerer la vitesse de convergence lors de la resolution<br />du systeme. Trois possibilites sont offertes :<br />0 : U = 0<br />1 : U = U(n)<br />2 : U = 2 U(n)- U(n-1) (extrapolation)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'0</dd>
+    
+    </dl>
+    
+    <h2>PARAMETRES PHYSIQUES DU TSUNAMI</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>100.;210000.;75000.;13.6;81.;41.;110.;0.;0.;3.</dd>
+    
+    </dl>
+    
+    <h2>PAS DE TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Definit le pas de temps en secondes.<br />Remarque : Pour une bonne precision; il est souhaitable de choisir<br />le pas de temps de telle sorte que le nombre de Courant de propagation<br />soit inferieur a 2 ; voir 3.<br />Ceci peut etre realisable en hydraulique fluviale ; mais ne l'est<br />pratiquement jamais en hydraulique maritime ou l'on peut atteindre<br />des valeurs de 50.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>PAS DE TEMPS VARIABLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pas de temps variable pour avoir un nombre de courant souhaite</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE COUPLAGE POUR SISYPHE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>pour eviter de faire le couplage a chaque pas de temps</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE COUPLAGE POUR TOMAWAC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>pour eviter de faire le couplage a chaque pas de temps</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE SORTIE LISTING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la periode en nombre de pas de temps d'impression<br />des 'VARIABLES A IMPRIMER' (voir ce mot-cle) Pour la mise au point,<br />il faut savoir que la sortie des resultats est effectuee<br />systematiquement sur le fichier de retour d'execution du code<br />(actuellement accessible par le menu 3.f de SPF sur IBM, et dans<br />le fichier !CAS.SORTIE sur station de travail)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE DE SORTIE POUR DELWAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Periode de sortie des resultats pour Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE POUR LES SORTIES DE FLOTTEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nombre de pas de temps entre 2 sorties de positions de<br />flotteurs dans le fichier des resultats binaire supplementaire<br />N affecte pas la qualite du calcul de la trajectoire</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE POUR LES SORTIES GRAPHIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la periode en nombre de pas de temps d'impression<br />des 'VARIABLES POUR LES SORTIES GRAPHIQUES' (voir ce mot-cle)<br />dans le FICHIER DES RESULTATS.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODE POUR LES SORTIES LISTING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine la periode en nombre de pas de temps d'impression<br />des 'VARIABLES A IMPRIMER' (voir ce mot-cle) Pour la mise au point,<br />il faut savoir que la sortie des resultats est effectuee<br />systematiquement sur le fichier de retour d'execution du code<br />(actuellement accessible par le menu 3.f de SPF sur IBM, et dans<br />le fichier !CAS.SORTIE sur station de travail)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PERIODES D'ANALYSE DE FOURIER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Liste des periodes que l'on veut analyser</dd>
+    
+    </dl>
+    
+    <h2>PLACE MEMOIRE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Place memoire (en mots de 8 octets) reservee en machine pour la<br />realisation du calcul.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1500000W</dd>
+    
+    </dl>
+    
+    <h2>PLUIE OU EVAPORATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour ajouter un apport ou une perte d'eau en surface.<br />Voir le mot-cle PLUIE OU EVAPORATION EN MM PAR JOUR</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>PLUIE OU EVAPORATION EN MM PAR JOUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Pour ajouter un apport ou une perte d'eau en surface</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.D0</dd>
+    
+    </dl>
+    
+    <h2>PRECISION DU SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Precision demandee pour la resolution de l'etape de propagation<br />(cf.  Note de principe).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-4</dd>
+    
+    </dl>
+    
+    <h2>PRECISION POUR LA DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la precision demandee pour le calcul de la diffusion<br />du traceur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-6</dd>
+    
+    </dl>
+    
+    <h2>PRECISION SUR EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la precision demandee sur epsilon pour le test d'arret dan<br />s l'etape de diffusion et termes sources de k et epsilon.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-9</dd>
+    
+    </dl>
+    
+    <h2>PRECISION SUR K</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la precision demandee sur k pour le test d'arret dans<br />l'etape de diffusion et termes sources du modele k-epsilon.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-9</dd>
+    
+    </dl>
+    
+    <h2>PRECISIONS POUR L'IDENTIFICATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>4 nombres : precision absolue sur H, U, V,<br />et precision relative sur la fonction cout</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-3;1.E-3;1.E-3;1.E-4</dd>
+    
+    </dl>
+    
+    <h2>PRECONDITIONNEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de preconditionner le systeme de l'etape de propagation<br />afin d'accelerer la convergence lors de sa resolution.<br />- 0 : pas de preconditionnement;<br />- 2 : preconditionnement diagonal.<br />- 3 : preconditionnement diagonal-bloc<br />- 7 : preconditionnement de Crout par element ou segment<br />-11 : preconditionnement de Gauss-Seidel par element ou segment<br />Certains preconditionnements sont cumulables<br />(les diagonaux 2 ou 3 avec les autres)<br />Pour cette raison on ne retient que les nombres premiers pour<br />designer les preconditionnements. Si l'on souhaite en cumuler<br />plusieurs on formera le produit des options correspondantes.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>2<br />'3="diagonal condensee"'; '7="crout"';'11="gauss-seidel"';<br />'14="diagonal et crout"'; '21="diagonal condense et crout"</dd>
+    
+    </dl>
+    
+    <h2>PRECONDITIONNEMENT C-U</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Changement de variable de H en C dans le systeme lineaire final</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>PRECONDITIONNEMENT POUR LA DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de preconditionner le systeme relatif au traceur.<br />Memes definition et possibilites que pour le mot-cle PRECONDITIONNEMENT.<br />0 : pas de preconditionnement;<br />2 : preconditionnement diagonal.<br />3 : preconditionnement diagonal avec la matrice conde</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>2<br />'3="diagonal condensee"'; '7="crout"';<br />'14="diagonal et crout"'; '21="diagonal condense et crout"</dd>
+    
+    </dl>
+    
+    <h2>PRECONDITIONNEMENT POUR LE MODELE K-EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de preconditionner le systeme relatif au modele k-epsilon<br />0 : pas de preconditionnement;<br />2 : preconditionnement diagonal.<br />3 : preconditionnement diagonal avec la matrice condensee.<br />7 : preconditionnement de Crout par element.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>2<br />'3="diagonal condensee"'; '7="crout"';<br />'14="diagonal et crout"'; '21="diagonal condense et crout"</dd>
+    
+    </dl>
+    
+    <h2>PRESSION ATMOSPHERIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de decider si l'on prend ou non en compte l'influence<br />d'un champ de pression.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>PRIORITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise par la procedure de lancement sur station de travail</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>JOUR</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>JOUR';'NUIT';'WEEK-END</dd>
+    
+    </dl>
+    
+    <h2>PROCESSEURS PARALLELES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>NOMBRE DE PROCESSEURS EN CALCUL PARALLELE<br />0 : 1 machine, compilation sans bibliotheque de parallelisme<br />1 : 1 machine, compilation avec bibliotheque de parallelisme<br />2 : 2 processeurs ou machines en parallele<br />etc...</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>PRODUIT MATRICE-VECTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : classique  2 : frontal<br />attention, avec 2, il faut une numerotation speciale des points</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>PROFILS DE VITESSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1:profil normal constant  2:u et v donnes dans le fichier conlim<br />3:vitesse normale donnee dans ubor dans le fichier conlim<br />4:profil en racine de la profondeur<br />5:profil en racine de la profondeur, variante</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />conlim"';'3="Vitesse normale donnee dans ubor dans le fichier<br />conlim"';'4="vitesse en racine carree de h"';<br />'5="vitesse en racine carree de h, variante"</dd>
+    
+    </dl>
+    
+    <h2>PROFONDEUR LIMITE POUR LE VENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Retire la force due au vent dans les petites profondeurs</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>PROFONDEUR LIMITE POUR PROCEDURE DE RESSUYAGE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si > 0., declenche la procedure de ressuyage qui evite<br />le franchissement parasite des digues mal discretisees</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>PROFONDEUR MOYENNE POUR LA LINEARISATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la hauteur d'eau autour de laquelle s'effectue la<br />linearisation lorsque l'option PROPAGATION LINEARISEE est choisie.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>PROPAGATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de la propagation de la vitesse et de la<br />hauteur d'eau.<br />La diffusion etant contenue dans cette etape sera supprimee aussi.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>PROPAGATION LINEARISEE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de lineariser l'etape de propagation;<br />par exemple lors de la realisation de cas tests pour lesquels on dispose<br />d'une solution analytique dans le cas linearise.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>QUALITE D'EAU</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non de qualite d eau</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>REDUCTION DU PAS DE TEMPS POUR LE MODELE K-EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Coefficient reducteur du pas de temps pour le modele k-epsilon<br />(qui est normalement identique a celui du systeme hydrodynamique).<br />Utilisation deconseillee</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.</dd>
+    
+    </dl>
+    
+    <h2>REGIME DE TURBULENCE POUR LES PAROIS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de choisir le regime de turbulence aux parois<br />1 : regime turbulent lisse.<br />2 : regime turbulent rugueux.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>REMISE A ZERO DU TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Remet le temps a zero en cas de suite de calcul</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SALINITE POUR DELWAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Decide de la sortie de la salinite pour Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SCHEMA EN VOLUMES FINIS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>0 : schema de Roe 1 : cinetique ordre 1  2 : cinetique ordre 2<br />3 : schema de Zokagoa 4 : schema de Tchamen 5 : HLLC ordre 1<br />6 : WAF ordre 2</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>0<br />'1="schéma cinetique ordre 1"';<br />'2="schéma cinetique ordre 2"' ;<br />'3="schéma Zokagoa ordre 1"';<br />'4="schéma Tchamen ordre 1"';<br />'5="schéma HLLC ordre 1"';<br />'6="schéma WAF ordre 2"</dd>
+    
+    </dl>
+    
+    <h2>SCHEMA POUR LA CONVECTION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Choix du schema de convection pour les traceurs,<br />remplace FORME DE LA CONVECTION</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>0<br />'1="CARACTERISTIQUES"';<br />'2="EXPLICITE + SUPG"';<br />'3="EXPLICITE LEO POSTMA"';<br />'4="EXPLICITE + MURD SCHEMA N"';<br />'5="EXPLICITE + MURD SCHEMA PSI"';<br />'13="LEO POSTMA POUR BANCS DECOUVRANTS"';<br />'14="SCHEMA N POUR BANCS DECOUVRANTS"</dd>
+    
+    </dl>
+    
+    <h2>SCHEMA POUR LA CONVECTION DES VITESSES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Choix du schema de convection pour les vitesses,<br />remplace FORME DE LA CONVECTION</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>0<br />'1="CARACTERISTIQUES"';<br />'2="EXPLICITE + SUPG"';<br />'3="EXPLICITE LEO POSTMA"';<br />'4="EXPLICITE + MURD SCHEMA N"';<br />'5="EXPLICITE + MURD SCHEMA PSI"';<br />'13="SCHEMA N POUR BANCS DECOUVRANTS"';<br />'14="SCHEMA N POUR BANCS DECOUVRANTS"</dd>
+    
+    </dl>
+    
+    <h2>SCHEMA POUR LA CONVECTION DU K-EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Choix du schema de convection pour k et epsilon,<br />remplace FORME DE LA CONVECTION</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>0<br />'1="CARACTERISTIQUES"';<br />'2="EXPLICITE + SUPG"';<br />'3="EXPLICITE LEO POSTMA"';<br />'4="EXPLICITE + MURD SCHEMA N"';<br />'5="EXPLICITE + MURD SCHEMA PSI"';<br />'13="LEO POSTMA POUR BANCS DECOUVRANTS"';<br />'14="SCHEMA N POUR BANCS DECOUVRANTS"</dd>
+    
+    </dl>
+    
+    <h2>SECTIONS DE CONTROLE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Couples de points (numeros globaux dans le maillage) entre<br />lesquels les debits instantanes et cumules seront donnes.</dd>
+    
+    </dl>
+    
+    <h2>SEUIL POUR LES PROFONDEURS NEGATIVES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>En dessous du seuil, les hauteurs negatives sont lissees</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>SOLVEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de choisir le solveur utilise pour la resolution de<br />l'etape de propagation. Toutes les methodes proposees actuellement<br />s'apparentent au Gradient Conjugue. Ce sont :<br />1 : gradient conjugue<br />2 : residu conjugue<br />3 : gradient conjugue sur equation normale<br />4 : erreur minimale<br />5 : gradient conjugue carre (non programme)<br />6 : gradient conjugue carre stabilise (cgstab)<br />7 : gmres (voir aussi option du solveur)<br />8 : direct</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>3<br />'1="gradient conjuge"';<br />'2="residu conjuge"';<br />'4="erreur minimale"';<br />'6="cgstab"';<br />'7="gmres"';<br />'8="direct"</dd>
+    
+    </dl>
+    
+    <h2>SOLVEUR POUR LA DIFFUSION DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : gradient conjugue 2 : residu conjugue 3 : gradient conjugue<br />sur equation normale 4 : erreur minimale 5 : gradient conjugue carre</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="residu conjuge"';<br />'3="gradient conjuge sur equation normale"';<br />'4="erreur minimale"';<br />'5="gradient conjuge carre"';<br />'6="cgstab"';<br />'7="gmres (voir ausi option du solveur)"';<br />'8="direct"</dd>
+    
+    </dl>
+    
+    <h2>SOLVEUR POUR LE MODELE K-EPSILON</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Permet de choisir le solveur utilise pour la resolution<br />du systeme du modele k-epsilon :<br />1 : gradient conjugue<br />2 : residu conjugue<br />3 : gradient conjugue sur equation normale<br />4 : erreur minimale<br />5 : gradient conjugue carre<br />6 : gradient conjugue carre stabilise (cgstab)<br />7 : gmres (voir aussi option du solveur pour le modele k-epsilon)<br />8 : direct</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="residu conjuge"';<br />'3="gradient conjugue sur equation normal"';<br />'4="erreur minimale"';<br />'5="gradient conjugue carre"';<br />'6="gradient conjugue carre stabilise (cgstab)"';<br />'7="gmres (voir aussi option du solveur pour le modele k-epsilon"';<br />'8="direct"</dd>
+    
+    </dl>
+    
+    <h2>SORTIE DES CONDITIONS INITIALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Si OUI, impression des conditions initiales dans les resultats</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>SORTIE LISTING</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Sortie des resultats sur support papier.<br />Si l'on met NON le listing ne contient que l'entete et la mention<br />FIN NORMALE DU PROGRAMME<br />Commande a eviter</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>STOCKAGE DES MATRICES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : EBE classique  3 : Stockage par segments</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>3</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'3="Stockage par segments"</dd>
+    
+    </dl>
+    
+    <h2>STRUCTURES VERTICALES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte de la force de trainee de structures verticales<br />(il faut alors remplir la subroutine DRAGFO)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SUITE DE CALCUL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Determine si le calcul en cours est independant de tout autre<br />resultat ou est une reprise effectuee a partir du resultat d'un calcul<br />precedent.<br />NON : Il s'agit du premier passage pour ce calcul et il est necessaire<br />de definir un jeu complet de conditions initiales<br />OUI : Il s'agit d'une reprise de calcul :<br />les conditions initiales sont constituees par le dernier pas de<br />temps du 'FICHIER DU CALCUL PRECEDENT' du fichier des parametres<br />utilise pour soumettre le calcul.<br />Par contre, l'ensemble des donnees du fichier des parametres<br />peuvent etre redefinies ; ce qui offre la possibilite de changer<br />par exemple, le pas de temps, le modele de turbulence, le<br />frottement, d'ajouter ou retirer un traceur ...<br />De meme, il est necessaire de definir des conditions aux limites<br />(sous-programme BORD ou valeurs placees dans le fichier des<br />parametres), qui peuvent egalement etre modifiees.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SYSTEME GEOGRAPHIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Systeme de coordonnees geographiques dans lequel est construit<br />le modele numerique.<br />Indiquer la zone correspondante avec le mot-cle</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>-1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'-1="PAS DE VALEUR PAR DEFAUT. CHOISIR LE SYSTEME PARMI LES CHOIX POSSIBLES"';<br />'0="DEFINI PAR L'UTILISATEUR"';<br />'1="WGS84 LONGITUDE/LATITUDE EN DEGRES REELS"';<br />'2="WGS84 NORD UTM"';<br />'3="WGS84 SUD UTM"';<br />'4="LAMBERT"';<br />'5="MERCATOR POUR TELEMAC"'</dd>
+    
+    </dl>
+    
+    <h2>TEMPERATURE MOYENNE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>TEMPERATURE DE REFERENCE POUR LE CALCUL DES EFFETS DE DENSITE<br />A UTILISER AVEC LE MOT-CLE "EFFETS DE DENSITE"</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>20.</dd>
+    
+    </dl>
+    
+    <h2>TEMPERATURE POUR DELWAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Decide de la sortie de la temperature pour Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>TEMPS MACHINE CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Temps CPU (en secondes) alloue pour la realisation du calcul.<br />Attention; il s'agit bien d'une chaine de caracteres.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+    <h2>TITRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Titre du cas etudie. Ce titre figurera sur les dessins.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>TRAITEMENT DES FLUX AUX FRONTIERES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise pour les schemas SUPG, PSI et N, avec option 2, on ne retrouve<br />pas exactement les valeurs imposees des traceurs,<br />mais le flux est correct</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>TRAITEMENT DES HAUTEURS NEGATIVES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Seulement avec OPTION DE TRAITEMENT DES BANCS DECOUVRANTS<br />0 : pas de traitement 1 : lissage 2 : limitation des flux</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>TRAITEMENT DU SYSTEME LINEAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1 : Traitement couple 2 : equation d onde</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>TYPE DE PROJECTION SPATIALE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Option 2 ou 3 obligatoire pour les coordonnees spheriques<br />Option 3 : latitude et longitude en degres !</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="MERCATOR"';<br />'3="LATITUDE LONGITUDE"</dd>
+    
+    </dl>
+    
+    <h2>TYPE DES ALGUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Type des algues. Pour le choix 1 les algues seront<br />modelisees comme des spheres, pour les autres choix voir Gaylord<br />et al. (1994).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>1<br />'2="IRIDAEA FLACCIDA (PROCHE DES ULVES)"';<br />'3="PELVETIOPSIS LIMITATA"';<br />'4="GIGARTINA LEPTORHYNCHOS"</dd>
+    
+    </dl>
+    
+    <h2>TYPE DES SEUILS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Méthode de traitement des seuils</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1="HORIZONTAL AVEC MEME NOMBRE DE NOEUDS AMONT/AVAL (Solution historique avec bord)"';<br />'2="GENERALE (Nouvelle solution avec pts sources)"'</dd>
+    
+    </dl>
+    
+    <h2>TYPE DES SOURCES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>1: Source portee par une base elements finis<br />2: Source portee  par une fonction de Dirac</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>'1</dd>
+    
+    </dl>
+    
+    <h2>USER CRAY</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Userid CRAY de l'utilisateur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>USER SUR LA DESTINATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom de l'USER de l'utilisateur sur la station de travail<br />ou l'on desire rediriger le fichier de resultts.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>JMH</dd>
+    
+    </dl>
+    
+    <h2>VALEUR DE LA PRESSION ATMOSPHERIQUE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>donne la valeur de la pression atmospherique lorsquelle est<br />constante en temps et en espace</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>100000.</dd>
+    
+    </dl>
+    
+    <h2>VALEUR MINIMUM DE H</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur minimale de a lorsque l'option CLIPPING<br />DE H est activee.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>VALEUR PAR DEFAUT DU MANNING POUR LA LOI DE COLEBROOK-WHITE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>valeur par defaut du manning pour la loi de frottement de<br />Colebrook-White (loi numero 7)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.02</dd>
+    
+    </dl>
+    
+    <h2>VALEURS DES TRACEURS DANS LA PLUIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>VALEURS DES TRACEURS DES SOURCES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des traceurs a chacune des sources</dd>
+    
+    </dl>
+    
+    <h2>VALEURS IMPOSEES DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs du traceur imposees aux frontieres liquides entrantes.<br />Lire la partie du mode d'emploi consacree aux conditions aux limites</dd>
+    
+    </dl>
+    
+    <h2>VALEURS INITIALES DES TRACEURS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Fixe la valeur initiale du traceur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.;0.</dd>
+    
+    </dl>
+    
+    <h2>VALEURS LIMITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Utilise avec le mot-cle CONTROLE DES LIMITES<br />valeurs mini et maxi acceptables pour H,U,V et T dans l'ordre<br />suivant : min(H) max(H) min(U) max(U)<br />min(V) max(V) min(T) max(T)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>-1000.;9000.;-1000.;1000.;-1000.;1000.;-1000.;1000.</dd>
+    
+    </dl>
+    
+    <h2>VALIDATION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Option utilisee principalement pour le dossier de validation. Le<br />fichier des resultats du calcul precedent est alors considere comme une<br />reference a laquelle on va comparer le calcul. La comparaison<br />est effectuee par le sous-programme VALIDA qui peut etre une comparaison<br />avec une solution exacte par exemple.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>VARIABLES A IMPRIMER</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom des variables que l'utilisateur desire ecrire a l'ecran.<br />Meme possibilites que pour les sorties graphiques.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    <dt>CHOIX</dt>
+    <dd>U<br />'V="vitesse suivant l'axe des y (m/s)"';<br />'C="celerite des ondes (m/s)"';<br />'H="hauteur d'eau (m)"';<br />'S="cote de surface libre (m)"';<br />'B="cote du fond (m)"';<br />'F="nombre de Froude"';<br />'Q="debit scalaire du fluide (m2/s)"';<br />'T="traceur"';<br />'K="energie turbulente du modele k-epsilon (J/kg)"';<br />'E="dissipation de l'energie turbulente (W/kg)"';<br />'D="viscosite turbulente du modele k-epsilon (m2/s)"';<br />'I="debit suivant l'axe des x (m2/s)"';<br />'J="debit suivant l'axe des y (m2/s)"';<br />'M="vitesse scalaire (m/s)"';<br />'X="vent suivant l'axe des x (m/s)"';<br />'Y="vent suivant l'axe des y (m/s)"';<br />'P="pression atmospherique (Pa)"';<br />'W="coefficient de frottement sur le fond"';<br />'A="derive en x  (m)"';<br />'G="derive en y  (m)"';<br />'L="nombre de courants "';<br />'N="variable supplementaire N"';<br />'O="variable supplementaire O"';<br />'R="variable supplementaire R"';<br />'Z="variable supplementaire Z"</dd>
+    
+    </dl>
+    
+    <h2>VARIABLES POUR LES SORTIES GRAPHIQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Noms des variables que l'utilisateur veut ecrire dans<br />le fichier des resultats.<br />Chaque variable est representee par une lettre.<br />Le choix des separateurs est libre.<br />Les possibilites offertes sont les suivantes :<br />- U : vitesse suivant l'axe des x (m/s),<br />- V : vitesse suivant l'axe des y (m/s),<br />- C : celerite des ondes (m/s),<br />- H : hauteur d'eau (m),<br />- S : cote de surface libre (m),<br />- B : cote du fond (m),<br />- F : nombre de Froude,<br />- Q : debit scalaire du fluide (m2/s),<br />- T : traceur,<br />- K : energie turbulente du modele k-epsilon (J/kg),<br />- E : dissipation de l'energie turbulente (W/kg),<br />- D : viscosite turbulente du modele k-epsilon (m2/s),<br />- I : debit suivant l'axe des x (m2/s),<br />- J : debit suivant l'axe des y (m2/s),<br />- M : vitesse scalaire (m/s),<br />- X : vent suivant l'axe des x (m/s),<br />- Y : vent suivant l'axe des y (m/s),<br />- P : pression atmospherique (Pa),<br />- W : coefficient de frottement sur le fond,<br />- A : derive en x (m),<br />- G : derive en y (m),<br />- L : coefficient de frottement sur le fond.<br />L'utilisateur dispose egalement de 4 champs libres, qu'il peut<br />utiliser pour ecrire dans le fichier des resultats des variables<br />qu'il cree lui-meme. Ces variables propres a l'utlisateur doivent<br />etre calculees dans le sous-programme PRERES et le nom que l'on<br />desire leur donner doit etre ecrit dans le sous-programme NOMVAR.<br />Ces 7 champs sont :<br />- N, O, R, Z qui correspondent aux tableaux PRIVE(1,1), PRIVE(1,2),<br />PRIVE(1,3), PRIVE(1,4). A la difference des variables<br />precedentes, celles-ci sont conservees dans tout le programme, et<br />peuvent donc etre reutilisees.<br />Dans ce dernier cas ne pas oublier de donner une taille<br />suffisante au tableau PRIVE (dans le programme principal).<br />Il est ainsi possible de limiter, par exemple, la taille des fichiers<br />de resultats pour de tres gros calculs. Cependant, il faut etre<br />conscient du fait que, dans l'eventualite d'une reprise de calcul,<br />le code doit disposer, dans le fichier des resultats, des informations<br />necessaires a sa poursuite, a savoir :<br />- les vitesses U et V,<br />- les hauteurs d'eau H,<br />- les cotes du fond B.<br />Toutefois, TELEMAC peut recalculer certaines de ces variables a partir<br />d'autres qui lui seront fournies (par exemple, il recalculera H a<br />partir de S et B).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>U,V,H,B</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>U<br />'V="vitesse suivant l'axe des y  (m/s)"';<br />'C="celerite des onde  (m/s)"';<br />'H="hauteur d'eau  (m)"';<br />'S="cote de surface libre  (m)"';<br />'B="cote du fond  (m)"';<br />'F="nombre de Froude  "';<br />'Q="debit scalaire du fluide  (m2/s)"';<br />'T1="traceur 1, etc. "';<br />'K="energie turbulente du modele k-epsilon  (J/kg)"';<br />'E="dissipation de l'energie turbulente  (W/kg)"';<br />'D="viscosite turbulente du modele k-epsilon  (m2/s)"';<br />'I="debit suivant l'axe des x  (m2/s)"';<br />'J="debit suivant l'axe des y  (m2/s)"';<br />'M="vitesse scalaire  (m/s)"';<br />'X="vent suivant l'axe des x  (m/s)"';<br />'Y="vent suivant l'axe des y  (m/s)"';<br />'P="pression atmospherique  (Pa)"';<br />'W="coefficient de frottement sur le fond  "';<br />'A="derive en x  (m)"';<br />'G="derive en y  (m)"';<br />'L="nombre de Courant  "';<br />'N="variable supplementaire N "';<br />'O="variable supplementaire O "';<br />'R="variable supplementaire R "';<br />'Z="variable supplementaire Z "';<br />'MAXZ="cote maximum "';<br />'TMXZ="temps de la cote maximum "';<br />'MAXV="vitesse maximum "';<br />'TMXV="temps de la vitesse maximum "';<br />'US="vitesse de frottement "</dd>
+    
+    </dl>
+    
+    <h2>VENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Prise en compte ou non des effets du vent.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>VITESSE DU VENT SUIVANT X</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Composante de la vitesse du vent suivant l'axe des x (m/s).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>VITESSE DU VENT SUIVANT Y</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Composante de la vitesse du vent suivant l'axe des y (m/s).</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>VITESSE ET DIRECTION DU VENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Donne la vitesse et la direction (en degres de 0 a 360,<br />0 etant y=0 et x=+inf) du vent lorsqu ils sont consant en temps et<br />en espace (mot cle OPTION DU VENT = 1)</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.;0.</dd>
+    
+    </dl>
+    
+    <h2>VITESSE POUR DELWAQ</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Decide de la sortie de la vitesse pour Delwaq</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>VITESSES DES SOURCES SELON X</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Vitesses du courant a chacune des sources. Si elles ne sont pas<br />donnees, on considere que la vitesse est celle du courant</dd>
+    
+    </dl>
+    
+    <h2>VITESSES DES SOURCES SELON Y</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Vitesses du courant a chacune des sources</dd>
+    
+    </dl>
+    
+    <h2>VITESSES IMPOSEES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Valeurs des vitesses imposees aux frontieres liquides entrantes.<br />Lire la partie du mode d'emploi consacree aux conditions aux limites</dd>
+    
+    </dl>
+    
+    <h2>ZERO</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Non active pour l'instant.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-12</dd>
+    
+    </dl>
+    
+
+  </body>
+</html>

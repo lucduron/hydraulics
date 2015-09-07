@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>stbtel</title>
+    <style>
+      h1 {
+        color: red;
+      }
+
+      h2 {
+        color: green;
+      }
+
+      dt {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      
+      <li><a href="artemis.xhtml">artemis</a></li>
+      
+      <li><a href="postel3d.xhtml">postel3d</a></li>
+      
+      <li><a href="sisyphe.xhtml">sisyphe</a></li>
+      
+      <li><a href="stbtel.xhtml">stbtel</a></li>
+      
+      <li><a href="telemac2d.xhtml">telemac2d</a></li>
+      
+      <li><a href="telemac3d.xhtml">telemac3d</a></li>
+      
+      <li><a href="tomawac.xhtml">tomawac</a></li>
+      
+    </ul>
+    <hr />
+    <h1>stbtel</h1>
+
+    
+    <h2>ABSCISSES DES SOMMETS DU POLYGONE D'EXTRACTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lorsque l'on souhaite extraire une partie du maillage,<br />permet de definir les abscisses des sommets du polygone a l'interieur<br />duquel le maillage sera effectivement extrait.<br />ATTENTION: ce polygone doit etre convexe et les coordonnees des<br />sommets donnes dans l'ordre trigonometrique.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0;0;0;0;0;0;0</dd>
+    
+    </dl>
+    
+    <h2>ABSCISSES DES SOMMETS DU POLYGONE DE RAFFINEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lorsque l'on souhaite raffiner une partie du maillage,<br />permet de definir les abscisses des sommets du polygone a l'interieur<br />duquel le maillage sera effectivement raffine.<br />ATTENTION: ce polygone doit etre convexe et les coordonnees des<br />sommets donnes dans l'ordre trigonometrique.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0;0;0;0;0;0;0</dd>
+    
+    </dl>
+    
+    <h2>BATHYMETRIE DANS LE FICHIER UNIVERSEL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet de relire la bathymetrie directement dans le fichier de<br />maillage (Trigrid ou Fasttabs).'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>BIBLIOTHEQUES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd></dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>CONDITIONS LIMITES DANS LE FICHIER ADDITIONNEL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet de relire les conditions limites dans le fichier<br />additionnel (Fasttabs).'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CONVERTISSEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet d activer le module de conversion.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>CORRECTION DES FONDS DE TRIGRID</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Fixe la valeur a ajouter a la bathymetrie lue dans le fichier<br />gemere par Trigrid.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>DEBUG</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet d activer le mode debuggage.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DECOUPAGE DES TRIANGLES EN QUATRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Decoupe chaque element du mayage en quatre elements homothetiques<br />en joignant les milieux des aretes.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DECOUPAGE DES TRIANGLES SURCONTRAINTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Un triangle surcontraint est tel que ses trois noeuds soient situes<br />sur une frontiere du domaine de calcul. La presence de tels triangles<br />peut entrainer des instabilites lors des calculs realises par<br />TELEMAC 2D.<br />Cette option permet, en creant un noeud place au barycentre de des<br />triangles surcontraints, d'eviter de tels problemes.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>DESCRIPTION DES LIBRAIRIES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Description des librairies de STBTEL</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|lib|stbtelMMMVVV.LLL';<br />'builds|PPP|lib|biefMMMVVV.LLL';<br />'builds|PPP|lib|damoMMMVVV.LLL';<br />'builds|PPP|lib|parallelMMMVVV.LLL';<br />'builds|PPP|lib|specialMMMVVV.LLL</dd>
+    
+    </dl>
+    
+    <h2>DICTIONNAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Dictionnaire des mots cles.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>stbtel.dico</dd>
+    
+    </dl>
+    
+    <h2>DISTANCE MINIMALE A LA FRONTIERE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'L'interpolation de la bathymetrie sur les noeuds du maillage est<br />realisee de la facon suivante. Pour chaque noeud du maillage, on<br />decoupe le plan en 4 quadrans. Dans chacun de ces quadrans, on cherche<br />le point releve a la table a digitaliser le plus proche. On affecte<br />alors au noeud considere une profondeur correspondant a la moyenne,<br />ponderee par la distance a ce noeud, des profondeurs en chacun des 4<br />points precedemment trouves.<br />On verifie toutefois que, lors de la recherche des points, les<br />frontieres du domaine ne sont pas franchies, de maniere a ne pas<br />introduire d'aberration dans la bathymetrie.<br />Ce mot-cle permet alors de definir la distance minimale aux frontieres<br />du domaine en dessous de laquelle on refuse de prendre en compte les<br />points releves.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.</dd>
+    
+    </dl>
+    
+    <h2>DISTANCE MINIMALE ENTRE DEUX POINTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Distance (en metres)en dessous de laquelle deux noeuds sont consideres<br />comme confondus par STBTEL, lors de la verification des resultats<br />fournis par le mailleur. Lorsque deux noeuds sont confondus, l'un<br />d'entre eux est elimine, et tous les noeuds du maillage sont<br />renumerotes.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1.E-5</dd>
+    
+    </dl>
+    
+    <h2>ECRITURE DE LA COULEUR DES NOEUDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Option non activee.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>ELIMINATION DES DEPENDANCES ARRIERES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet de renumeroter les noeuds du maillage de maniere a eliminer les<br />dependances arrieres et autoriser ainsi le forcage de la vectorisation<br />lorsque les calculs TELEMAC 2D son effectues sur CRAY.<br />Attention : un nombre minimum d'environ 500 noeuds est requis pour<br />l'activation de cette option.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>ELIMINATION DES ELEMENTS PARTIELLEMENT SECS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lors de l'elimination des elements secs, permet de specifier si<br />on traite les elements parteillement secs (au moins un noeud sec).'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>ELIMINATION DES ELEMENTS SECS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lors du traitement d'un fichier de resultats issu de TELEMAC-2D,<br />permet d'activer l'elimination des elements secs.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>EXECUTABLE PAR DEFAUT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Executable par defaut de STBTEL</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|bin|stbtelMMMVVV.exe</dd>
+    
+    </dl>
+    
+    <h2>EXECUTABLE PARALLELE PAR DEFAUT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Executable parallele par defaut de Stbtel</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>builds|PPP|bin|stbtelMMMVVV.exe</dd>
+    
+    </dl>
+    
+    <h2>FICHIER ADDITIONNEL DU MAILLEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier additionnel. Ce fichier a une signification<br />differente en fonction du mailleur choisi.<br />Trigrid : Fichier contenant la table de connectivites (obligatoire).<br />Fasttabs : Fichier contenant les conditions limites (optionnel).'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER D ENTREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier a convertir.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE GEOMETRIE POUR TELEMAC</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier qui contiendra le maillage mis au format SELAFIN, et<br />qui servira pour les calculs TELEMAC 2D.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DE SORTIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier converti'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES CONDITIONS AUX LIMITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier qui contiendra les conditions aux limites lues dans le<br />FICHIER UNIVERSEL, et qui servira pour les calculs TELEMAC 2D.<br />(les conditions aux limites sont definies lors de la realisation du<br />maillage, au moyen de couleurs affectees aux noeuds des frontieres du<br />domaine de calcul).'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES CONDITIONS LIMITES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier des conditions limites'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES CONDITIONS LIMITES EN SORTIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier des conditions limites pour le fichier converti'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER DES PARAMETRES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier contenant les references des fichiers et les options<br />du calcul a realiser.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER FORTRAN</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Nom du fichier FORTRAN a soumettre.<br />Il ne sert a priori qu'a dimensionner les tableaux utilises par<br />STBTEL, mais peut contenir des sous-programmes modifies ou propres a<br />l'utilisateur.</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>DEFAUT</dd>
+    
+    </dl>
+    
+    <h2>FICHIER LOG</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier complementaire pour le format UNV'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER LOG EN SORTIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier complementaire pour le fichier converti'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIER UNIVERSEL</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier construit par le mailleur, a partir duquel STBTEL va<br />travailler.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>FICHIERS DES FONDS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du fichier contenant la bathymetrie (au standard SINUSX), qui<br />servira pour la definition, par interpolation, de la profondeur en<br />chaque point du maillage.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>';' ';' ';' ';'</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER D ENTREE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Specifie le format du fichier d entree</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SELAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SELAFIN';<br />'MED';<br />'UNV';<br />'CGNS</dd>
+    
+    </dl>
+    
+    <h2>FORMAT DU FICHIER DE SORTIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>Specifie le format du fichier de sortie</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>SELAFIN</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SELAFIN';<br />'MED';<br />'UNV';<br />'CGNS';<br />'VTK';<br />'CGNS</dd>
+    
+    </dl>
+    
+    <h2>LONGUEUR DU VECTEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet de fixer, sur machine vectorielle, la longueur du vecteur.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1</dd>
+    
+    </dl>
+    
+    <h2>MAILLEUR</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Nom du mailleur utilise pour la creation du FICHIER UNIVERSEL. Ce peut<br />etre :<br />- SUPERTAB6 (version 6 du mailleur SUPERTAB),<br />- SUPERTAB4 (version 4 du mailleur SUPERTAB),<br />- MASTER2 (version 2 du mailleur MASTER-SERIES),<br />- SIMAIL,<br />- SELAFIN (afin de modifier un maillage deja utilise, comme pour :<br />- interpoler de nouveau fonds<br />- eliminer des dependances arrieres<br />- coupe triangles surcontraints),<br />- TRIGRID,<br />- FASTTABS.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>MASTER2</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>SUPERTAB4;<br />SUPERTAB6;<br />MASTER2;<br />SIMAIL;<br />SELAFIN;<br />TRIGRID;<br />FASTTABS</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE SOMMETS DU POLYGONE D'EXTRACTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lorsque l'on souhaite extraire une partie du maillage,<br />permet de definir le nombre de sommets du polygone a l'interieur<br />duquel le maillage sera effectivement extrait.<br />ATTENTION: ce polygone doit etre convexe et les coordonnees des<br />sommets donnes dans l'ordre trigonometrique.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE DE SOMMETS DU POLYGONE DE RAFFINEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lorsque l'on souhaite raffiner une partie du maillage,<br />permet de definir le nombre de sommets du polygone a l'interieur<br />duquel le maillage sera effectivement raffine.<br />ATTENTION: ce polygone doit etre convexe et les coordonnees des<br />sommets donnes dans l'ordre trigonometrique.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>NOMBRE MAXIMUM DE POINTS DE BATHYMETRIE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet de dimensionner le tableau utilise pour la lecture, dans les<br />FICHIERS DES FONDS, des points releves a la table a digitaliser.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>20000</dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE COMPTE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Numero de compte d'imputation des calculs sur CRAY'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd></dd>
+    
+    </dl>
+    
+    <h2>NUMERO DE VERSION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Numeros de version respectivement des bibliotheques<br />stbtel,damo,util,hp'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>V6P3</dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DU POLYGONE D'EXTRACTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lorsque l'on souhaite extraire une partie du maillage,<br />permet de definir les ordonnees des sommets du polygone a l'interieur<br />duquel le maillage sera effectivement extrait.<br />ATTENTION: ce polygone doit etre convexe et les coordonnees des<br />sommets donnes dans l'ordre trigonometrique.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0;0;0;0;0;0;0</dd>
+    
+    </dl>
+    
+    <h2>ORDONNEES DES SOMMETS DU POLYGONE DE RAFFINEMENT</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lorsque l'on souhaite raffiner une partie du maillage,<br />permet de definir les ordonnees des sommets du polygone a l'interieur<br />duquel le maillage sera effectivement raffine.<br />ATTENTION: ce polygone doit etre convexe et les coordonnees des<br />sommets donnes dans l'ordre trigonometrique.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0;0;0;0;0;0;0;0;0</dd>
+    
+    </dl>
+    
+    <h2>PLACE MEMOIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Place memoire sur CRAY, en mots de 8 octets, reservee en machine pour<br />la realisation du calcul. Une estimation de cette valeur est donnee en<br />tete du listing.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>1500000W</dd>
+    
+    </dl>
+    
+    <h2>PROCESSEURS PARALLELES</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>NOMBRE DE PROCESSEURS EN CALCUL PARALLELE<br />0 : 1 machine, compilation sans bibliotheque de parallelisme<br />1 : 1 machine, compilation avec bibliotheque de parallelisme<br />2 : 2 processeurs ou machines en parallele<br />etc...</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0</dd>
+    
+    </dl>
+    
+    <h2>PROJECTION APRES EXTRACTION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lors d'une extraction de maillage suivant un polygone, projette ou<br />non le maillage extrait sur les aretes du polygone.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>OUI</dd>
+    
+    </dl>
+    
+    <h2>RENUMEROTATION DES POINTS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Permet d'utiliser le nouveau type de stockage des matrices.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SELAFIN EN DOUBLE PRECISION</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Precise que le fichier selafin est en double precision'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>SEUIL DE SECHERESSE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Fixe la valeur du seuil (en metre) de hauteur d'eau en dessous<br />duquel un noeud est considere comme sec.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>0.1</dd>
+    
+    </dl>
+    
+    <h2>STANDARD DE BINAIRE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Adapte l'ecriture du FICHIER DE GEOMETRIE POUR TELEMAC au standard<br />binaire choisi pour celui-ci. Ce peut etre :<br />- IBM : binaire IBM,<br />- I3E : binaire HP,<br />- STD : prend par defaut le binaire de la machine sur laquelle<br />l'utilisateur travaille. Ce sont alors des ordres READ et<br />WRITE normaux qui sont utilises.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>STD</dd>
+    
+    <dt>CHOIX</dt>
+    <dd>STD';'IBM';'I3E</dd>
+    
+    </dl>
+    
+    <h2>STOCKAGE DE TOUS LES PAS DE TEMPS</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Lors du traitement d'elimination des elements secs, permet de<br />specifier si on restocke tous les pas de temps dans le fichier<br />resultat'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>NON</dd>
+    
+    </dl>
+    
+    <h2>TEMPS MACHINE</h2>
+    <dl>
+    
+    <dt>AIDE</dt>
+    <dd>'Temps CPU (en secondes) alloue pour la realisation du calcul.<br />Attention, il s'agit bien d'une chaine de caracteres.<br />Option non activee sur une station de travail.'</dd>
+    
+    <dt>DÉFAUT</dt>
+    <dd>10</dd>
+    
+    </dl>
+    
+
+  </body>
+</html>
